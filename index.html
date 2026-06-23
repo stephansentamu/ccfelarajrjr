@@ -1,948 +1,1604 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>CELARA SKINCARE — Beauty. Care. Confidence.</title>
-<meta name="description" content="Celara brings nature's purest ingredients to your skin for visible transformation and lasting radiance.">
-<meta property="og:title" content="CELARA SKINCARE — Beauty. Care. Confidence.">
-<meta property="og:image" content="https://models.valts.online/celara/wlogo.png">
-<meta name="theme-color" content="#ffffff">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--w:#ffffff;--pw:#fefefe;--bk:#000000;--g55:#555;--g99:#999;--gdd:#ddd;--gee:#eee;--fsans:'Inter',system-ui,sans-serif;--fserif:'Cormorant Garamond',Georgia,serif}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--fsans);background:var(--pw);color:var(--bk);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;background:none;font-family:inherit}input{font-family:inherit}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>CELARA SKINCARE — Beauty. Care. Confidence.</title>
+    <meta name="description" content="Celara brings nature's purest ingredients to your skin for visible transformation and lasting radiance.">
+    <meta property="og:title" content="CELARA SKINCARE — Beauty. Care. Confidence.">
+    <meta property="og:image" content="https://models.celara.online/celara/wlogo.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        :root {
+            --w: #ffffff;
+            --pw: #fefefe;
+            --bk: #000000;
+            --g55: #555;
+            --g99: #999;
+            --gdd: #ddd;
+            --gee: #eee;
+            --fsans: 'Inter', system-ui, sans-serif;
+            --fserif: 'Cormorant Garamond', Georgia, serif
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%
+        }
+        body {
+            font-family: var(--fsans);
+            background: var(--pw);
+            color: var(--bk);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased
+        }
+        img {
+            max-width: 100%;
+            display: block
+        }
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit
+        }
+        input {
+            font-family: inherit
+        }
 
-/* PAGE */
-.page{display:none;min-height:100vh;flex-direction:column}.page.active{display:flex}
+        /* PAGE */
+        .page {
+            display: none;
+            min-height: 100vh;
+            flex-direction: column
+        }
+        .page.active {
+            display: flex
+        }
 
-/* MARQUEE */
-.mw{width:100%;background:var(--bk);overflow:hidden;white-space:nowrap}.mt-track{display:inline-flex;animation:mq 22s linear infinite}.mt-track span{color:var(--w);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 2.2rem}@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        /* MARQUEE */
+        .mw {
+            width: 100%;
+            background: var(--bk);
+            overflow: hidden;
+            white-space: nowrap
+        }
+        .mt-track {
+            display: inline-flex;
+            animation: mq 22s linear infinite
+        }
+        .mt-track span {
+            color: var(--w);
+            font-size: 11px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            padding: 7px 2.2rem
+        }
+        @keyframes mq {
+            0% {
+                transform: translateX(0)
+            }
+            100% {
+                transform: translateX(-50%)
+            }
+        }
 
-/* NAV OVAL */
-.noval{display:inline-flex;align-items:center;background:var(--bk);border-radius:999px;padding:4px;position:relative}
-.noval-i{color:var(--w);font-size:12px;letter-spacing:.08em;padding:8px 18px;cursor:pointer;position:relative;z-index:2;transition:color .3s;white-space:nowrap;font-weight:500}
-.noval-i.on{color:var(--bk)}
-.noval-s{position:absolute;top:4px;height:calc(100% - 8px);background:var(--w);border-radius:999px;transition:all .35s cubic-bezier(.4,0,.2,1);z-index:1}
+        /* NAV OVAL */
+        .noval {
+            display: inline-flex;
+            align-items: center;
+            background: var(--bk);
+            border-radius: 999px;
+            padding: 4px;
+            position: relative
+        }
+        .noval-i {
+            color: var(--w);
+            font-size: 12px;
+            letter-spacing: .08em;
+            padding: 8px 18px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: color .3s;
+            white-space: nowrap;
+            font-weight: 500
+        }
+        .noval-i.on {
+            color: var(--bk)
+        }
+        .noval-s {
+            position: absolute;
+            top: 4px;
+            height: calc(100% - 8px);
+            background: var(--w);
+            border-radius: 999px;
+            transition: all .35s cubic-bezier(.4, 0, .2, 1);
+            z-index: 1
+        }
 
-/* SIZE SEL */
-.ssel{display:inline-flex;background:var(--bk);border-radius:999px;padding:3px}.ssel-i{color:var(--w);font-size:12px;padding:7px 22px;border-radius:999px;cursor:pointer;transition:all .3s;letter-spacing:.05em;font-weight:500}.ssel-i.on{background:var(--w);color:var(--bk)}
+        /* SIZE SEL */
+        .ssel {
+            display: inline-flex;
+            background: var(--bk);
+            border-radius: 999px;
+            padding: 3px
+        }
+        .ssel-i {
+            color: var(--w);
+            font-size: 12px;
+            padding: 7px 22px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all .3s;
+            letter-spacing: .05em;
+            font-weight: 500
+        }
+        .ssel-i.on {
+            background: var(--w);
+            color: var(--bk)
+        }
 
-/* PRODUCT GRID */
-.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr);gap:10px}}
+        /* PRODUCT GRID */
+        .pgrid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px
+        }
+        @media(max-width:900px) {
+            .pgrid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px
+            }
+        }
 
-/* PACKAGE GRID */
-.pkgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:900px){.pkgrid{grid-template-columns:repeat(2,1fr);gap:10px}}
+        /* PACKAGE GRID */
+        .pkgrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px
+        }
+        @media(max-width:900px) {
+            .pkgrid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px
+            }
+        }
 
-/* PRODUCT CARD */
-.pcard{background:var(--w);border:1.5px solid var(--bk);border-radius:8px;overflow:hidden;cursor:pointer;transition:box-shadow .3s}.pcard:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.pcard-img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--gee)}
-.pcard-body{padding:8px 10px}
-.pcard-name{font-weight:600;font-size:12px;line-height:1.3}
-.pcard-price{font-size:11px;color:var(--g55);margin-top:2px}
-.pcard-cap{font-size:10px;color:var(--g99);margin-top:1px}
+        /* PRODUCT CARD */
+        .pcard {
+            background: var(--w);
+            border: 1.5px solid var(--bk);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: box-shadow .3s
+        }
+        .pcard:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .08)
+        }
+        .pcard-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            background: var(--gee)
+        }
+        .pcard-body {
+            padding: 8px 10px
+        }
+        .pcard-name {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 1.3
+        }
+        .pcard-price {
+            font-size: 11px;
+            color: var(--g55);
+            margin-top: 2px
+        }
+        .pcard-cap {
+            font-size: 10px;
+            color: var(--g99);
+            margin-top: 1px
+        }
 
-/* QTY */
-.qctrl{display:inline-flex;align-items:center;border:1.5px solid var(--bk);border-radius:6px;overflow:hidden}
-.qbtn{width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;transition:background .2s}.qbtn:hover{background:var(--gee)}
-.qval{font-size:12px;font-weight:600;min-width:18px;text-align:center}
+        /* QTY */
+        .qctrl {
+            display: inline-flex;
+            align-items: center;
+            border: 1.5px solid var(--bk);
+            border-radius: 6px;
+            overflow: hidden
+        }
+        .qbtn {
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background .2s
+        }
+        .qbtn:hover {
+            background: var(--gee)
+        }
+        .qval {
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 18px;
+            text-align: center
+        }
 
-/* CAROUSEL */
-.csl{position:relative;overflow:hidden;border-radius:8px}.csl-t{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}.csl-sl{min-width:100%;position:relative}.csl-sl img,.csl-sl video{width:100%;display:block}
-.csl-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:36px;height:36px;background:rgba(255,255,255,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--bk);cursor:pointer;transition:background .2s;border:none}.csl-btn:hover{background:#fff}.csl-btn.prv{left:8px}.csl-btn.nxt{right:8px}
-.csl-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}.csl-dot{width:8px;height:8px;border-radius:50%;background:var(--gdd);cursor:pointer;transition:background .3s;border:none}.csl-dot.on{background:var(--bk)}
+        /* CAROUSEL */
+        .csl {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px
+        }
+        .csl-t {
+            display: flex;
+            transition: transform .5s cubic-bezier(.4, 0, .2, 1)
+        }
+        .csl-sl {
+            min-width: 100%;
+            position: relative
+        }
+        .csl-sl img,
+        .csl-sl video {
+            width: 100%;
+            display: block
+        }
+        .csl-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, .88);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--bk);
+            cursor: pointer;
+            transition: background .2s;
+            border: none
+        }
+        .csl-btn:hover {
+            background: #fff
+        }
+        .csl-btn.prv {
+            left: 8px
+        }
+        .csl-btn.nxt {
+            right: 8px
+        }
+        .csl-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 8px
+        }
+        .csl-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gdd);
+            cursor: pointer;
+            transition: background .3s;
+            border: none
+        }
+        .csl-dot.on {
+            background: var(--bk)
+        }
 
-/* BEFORE/AFTER */
-.ba-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}.ba-side{position:relative;overflow:hidden;cursor:pointer}.ba-side img{width:100%;aspect-ratio:3/4;object-fit:cover}.ba-lbl{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.55);color:#fff;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:5px;text-align:center;font-weight:500}
+        /* BEFORE/AFTER */
+        .ba-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0
+        }
+        .ba-side {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer
+        }
+        .ba-side img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover
+        }
+        .ba-lbl {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, .55);
+            color: #fff;
+            font-size: 9px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            padding: 5px;
+            text-align: center;
+            font-weight: 500
+        }
 
-/* OVERLAYS */
-.ov{position:fixed;inset:0;z-index:9999;display:none;flex-direction:column}
-.ov.show{display:flex}
-.ov-bg{background:rgba(255,255,255,.97)}
+        /* OVERLAYS */
+        .ov {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: none;
+            flex-direction: column
+        }
+        .ov.show {
+            display: flex
+        }
+        .ov-bg {
+            background: rgba(255, 255, 255, .97)
+        }
 
-/* LIGHTBOX */
-#lb{z-index:10000;background:rgba(0,0,0,.92);align-items:center;justify-content:center}#lb img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:6px}#lb .lb-x{position:absolute;top:1.2rem;right:1.2rem;color:#fff;font-size:2rem;cursor:pointer}
+        /* LIGHTBOX */
+        #lb {
+            z-index: 10000;
+            background: rgba(0, 0, 0, .92);
+            align-items: center;
+            justify-content: center
+        }
+        #lb img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 6px
+        }
+        #lb .lb-x {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer
+        }
 
-/* SEARCH */
-#sov{z-index:9998;padding:2rem}.s-input{width:100%;border:none;border-bottom:2px solid var(--bk);font-size:1.1rem;padding:.7rem 0;outline:none;background:transparent}.s-results{margin-top:1.2rem;overflow-y:auto;flex:1}.s-ritem{padding:.7rem 0;border-bottom:1px solid var(--gee);cursor:pointer;display:flex;align-items:center;gap:.8rem}.s-ritem img{width:44px;height:44px;object-fit:cover;border-radius:6px}.s-ritem:hover{background:var(--gee)}
+        /* SEARCH */
+        #sov {
+            z-index: 9998;
+            padding: 2rem
+        }
+        .s-input {
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid var(--bk);
+            font-size: 1.1rem;
+            padding: .7rem 0;
+            outline: none;
+            background: transparent
+        }
+        .s-results {
+            margin-top: 1.2rem;
+            overflow-y: auto;
+            flex: 1
+        }
+        .s-ritem {
+            padding: .7rem 0;
+            border-bottom: 1px solid var(--gee);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: .8rem
+        }
+        .s-ritem img {
+            width: 44px;
+            height: 44px;
+            object-fit: cover;
+            border-radius: 6px
+        }
+        .s-ritem:hover {
+            background: var(--gee)
+        }
 
-/* CART */
-#cov{z-index:9997;padding:2rem}.cart-item{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--gee)}
+        /* CART */
+        #cov {
+            z-index: 9997;
+            padding: 2rem
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .6rem 0;
+            border-bottom: 1px solid var(--gee)
+        }
 
-/* MENU */
-#mov{z-index:9996;align-items:center;justify-content:center;gap:2rem}.mov-i{font-size:1.2rem;font-weight:600;letter-spacing:.08em;cursor:pointer}
+        /* MENU */
+        #mov {
+            z-index: 9996;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem
+        }
+        .mov-i {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            cursor: pointer
+        }
 
-/* EXPANDABLE */
-.exp{border-top:1px solid var(--gee)}.exp-h{display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.04em}.exp-c{max-height:0;overflow:hidden;transition:max-height .4s ease;font-size:11px;line-height:1.7;color:var(--g55)}.exp-c.open{max-height:500px;padding-bottom:10px}
+        /* EXPANDABLE */
+        .exp {
+            border-top: 1px solid var(--gee)
+        }
+        .exp-h {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .04em
+        }
+        .exp-c {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease;
+            font-size: 11px;
+            line-height: 1.7;
+            color: var(--g55)
+        }
+        .exp-c.open {
+            max-height: 500px;
+            padding-bottom: 10px
+        }
 
-/* BTN */
-.btn-bk{background:var(--bk);color:var(--w);padding:8px 20px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:opacity .2s;border:none}.btn-bk:hover{opacity:.85}
+        /* BTN */
+        .btn-bk {
+            background: var(--bk);
+            color: var(--w);
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .06em;
+            cursor: pointer;
+            transition: opacity .2s;
+            border: none
+        }
+        .btn-bk:hover {
+            opacity: .85
+        }
 
-/* DESKTOP NAV */
-.dnav{display:flex;align-items:center;justify-content:space-between}
-.mnav{display:none}
-@media(max-width:768px){
-  .dnav{display:none !important}
-  .mnav{display:flex !important}
-  .mnav-row1{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 0}
-  .mnav-row2{display:flex;justify-content:center;width:100%;padding:4px 0 8px}
-}
+        /* DESKTOP NAV */
+        .dnav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+        .mnav {
+            display: none
+        }
+        @media(max-width:768px) {
+            .dnav {
+                display: none !important
+            }
+            .mnav {
+                display: flex !important
+            }
+            .mnav-row1 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 8px 0
+            }
+            .mnav-row2 {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                padding: 4px 0 8px
+            }
+        }
 
-/* SUGGEST GRID */
-.sggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-@media(max-width:600px){.sggrid{grid-template-columns:repeat(2,1fr);gap:8px}}
+        /* SUGGEST GRID */
+        .sggrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px
+        }
+        @media(max-width:600px) {
+            .sggrid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px
+            }
+        }
 
-/* PD LAYOUT */
-.pd-lay{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-@media(max-width:768px){.pd-lay{grid-template-columns:1fr;gap:1.2rem}}
+        /* PD LAYOUT */
+        .pd-lay {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem
+        }
+        @media(max-width:768px) {
+            .pd-lay {
+                grid-template-columns: 1fr;
+                gap: 1.2rem
+            }
+        }
 
-/* HOME 2 BOX */
-.h2box{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:600px){.h2box{grid-template-columns:1fr;gap:10px}}
+        /* HOME 2 BOX */
+        .h2box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+        @media(max-width:600px) {
+            .h2box {
+                grid-template-columns: 1fr;
+                gap: 10px
+            }
+        }
 
-/* FOOTER */
-.ftr-desktop{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
-.ftr-phone{display:none;flex-direction:column;align-items:center;gap:.8rem}
-@media(max-width:600px){.ftr-desktop{display:none !important}.ftr-phone{display:flex !important}}
+        /* FOOTER */
+        .ftr-desktop {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .8rem
+        }
+        .ftr-phone {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: .8rem
+        }
+        @media(max-width:600px) {
+            .ftr-desktop {
+                display: none !important
+            }
+            .ftr-phone {
+                display: flex !important
+            }
+        }
 
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
-.container{width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
-</style>
+        ::-webkit-scrollbar {
+            width: 5px
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px
+        }
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 16px
+        }
+    </style>
 </head>
 <body>
 
-<!-- LIGHTBOX -->
-<div class="ov ov-bg" id="lb" onclick="closeLB()">
-  <img id="lb-img" src="" alt="Preview">
-  <span class="lb-x" onclick="closeLB()">&times;</span>
-</div>
-
-<!-- SEARCH OVERLAY -->
-<div class="ov ov-bg" id="sov">
-  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
-    <input class="s-input" id="sinp" placeholder="Search products, skin types..." oninput="doSearch(this.value)">
-    <span style="font-size:1.5rem;cursor:pointer" onclick="closeS()">&times;</span>
-  </div>
-  <div class="s-results" id="sres"></div>
-</div>
-
-<!-- CART OVERLAY -->
-<div class="ov ov-bg" id="cov">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-    <span style="font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:14px">Your Cart</span>
-    <span style="font-size:1.5rem;cursor:pointer" onclick="closeC()">&times;</span>
-  </div>
-  <div id="citems" style="flex:1;overflow-y:auto"></div>
-  <div style="border-top:2px solid var(--bk);padding-top:1rem;margin-top:1rem">
-    <div style="display:flex;justify-content:space-between;font-weight:700;font-size:15px"><span>Total</span><span id="ctot">Ush 0</span></div>
-    <button class="btn-bk" style="width:100%;margin-top:.6rem;padding:12px" onclick="checkout()">Shop Now</button>
-  </div>
-</div>
-
-<!-- MENU OVERLAY -->
-<div class="ov ov-bg" id="mov">
-  <span style="position:absolute;top:1.2rem;right:1.2rem;font-size:1.8rem;cursor:pointer" onclick="closeM()">&times;</span>
-  <div class="mov-i" onclick="go('home');closeM()">Home</div>
-  <div class="mov-i" onclick="go('products');closeM()">Products</div>
-  <div class="mov-i" onclick="go('skintypes');closeM()">Skin Type</div>
-  <div class="mov-i" onclick="openS();closeM()">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-  </div>
-  <div class="mov-i" onclick="openC();closeM()">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-  </div>
-</div>
-
-<!-- SVG ICONS TEMPLATE -->
-<template id="ico-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></template>
-<template id="ico-cart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></template>
-<template id="ico-ig"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></template>
-<template id="ico-tt"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></template>
-<template id="ico-wa"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></template>
-
-<!-- ========== HELPER: STANDARD NAV (HOME / PRODUCTS / SKINTYPES) ========== -->
-<template id="tpl-stdnav">
-<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
-  <div class="container">
-    <!-- DESKTOP NAV -->
-    <div class="dnav" style="padding:10px 0">
-      <div style="cursor:pointer" data-nav="logo"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
-      <div data-nav="oval"></div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span data-nav="search" style="cursor:pointer"></span>
-        <span data-nav="cartbtn" style="cursor:pointer;position:relative"></span>
-        <button class="btn-bk" data-nav="shopnow" style="padding:6px 16px;font-size:10px">Shop Now</button>
-      </div>
+    <!-- LIGHTBOX -->
+    <div class="ov ov-bg" id="lb" onclick="closeLB()">
+        <img id="lb-img" src="" alt="Preview">
+        <span class="lb-x" onclick="closeLB()">&times;</span>
     </div>
-    <!-- PHONE NAV -->
-    <div class="mnav" style="flex-direction:column">
-      <div class="mnav-row1">
-        <div style="cursor:pointer" data-nav="logo"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
-        <div style="display:flex;align-items:center;gap:10px">
-          <span data-nav="search" style="cursor:pointer"></span>
-          <span data-nav="cartbtn" style="cursor:pointer;position:relative"></span>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="ov ov-bg" id="sov">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+            <input class="s-input" id="sinp" placeholder="Search products, skin types..." oninput="doSearch(this.value)">
+            <span style="font-size:1.5rem;cursor:pointer" onclick="closeS()">&times;</span>
         </div>
-      </div>
-      <div class="mnav-row2">
-        <div data-nav="oval" style="width:100%"></div>
-      </div>
+        <div class="s-results" id="sres"></div>
     </div>
-  </div>
-</div>
-</template>
 
-<!-- ====================== PAGE: HOME ====================== -->
-<div class="page active" id="pg-home">
-
-<!-- NAV -->
-<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
-<div class="container">
-<div class="dnav" style="padding:10px 0">
-  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
-  <div class="noval" id="h-oval"><div class="noval-s" id="h-oval-s"></div><div class="noval-i on" onclick="go('home')">Home</div><div class="noval-i" onclick="go('products')">Products</div><div class="noval-i" onclick="go('skintypes')">Skin Type</div></div>
-  <div style="display:flex;align-items:center;gap:10px">
-    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
-    <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
-  </div>
-</div>
-<div class="mnav" style="flex-direction:column">
-  <div class="mnav-row1">
-    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
-    <div style="display:flex;align-items:center;gap:10px">
-      <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-      <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+    <!-- CART OVERLAY -->
+    <div class="ov ov-bg" id="cov">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <span style="font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:14px">Your Cart</span>
+            <span style="font-size:1.5rem;cursor:pointer" onclick="closeC()">&times;</span>
+        </div>
+        <div id="citems" style="flex:1;overflow-y:auto"></div>
+        <div style="border-top:2px solid var(--bk);padding-top:1rem;margin-top:1rem">
+            <div style="display:flex;justify-content:space-between;font-weight:700;font-size:15px"><span>Total</span><span id="ctot">Ush 0</span></div>
+            <button class="btn-bk" style="width:100%;margin-top:.6rem;padding:12px" onclick="checkout()">Shop Now</button>
+        </div>
     </div>
-  </div>
-  <div class="mnav-row2">
-    <div class="noval" id="h-oval-m" style="width:100%"><div class="noval-s" id="h-oval-m-s"></div><div class="noval-i on" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
-  </div>
-</div>
-</div>
-</div>
 
-<!-- HERO -->
-<section style="width:100%;position:relative">
-  <img src="https://models.valts.online/celara/p1.png" alt="Celara Skincare" style="width:100%;aspect-ratio:16/7;object-fit:cover">
-  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-    <span style="font-family:var(--fserif);font-weight:300;letter-spacing:.35em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.5);font-size:clamp(1.2rem,4vw,2.6rem)">BEAUTY. CARE. CONFIDENCE.</span>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="mw"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
-
-<!-- SALES -->
-<section class="container" style="margin-top:2rem;text-align:center;max-width:680px">
-  <p style="font-size:13px;font-weight:300;line-height:1.9;color:var(--g55)">Celara brings nature's purest ingredients to your skin for visible transformation and lasting radiance.<br>Crafted from nature's finest botanicals, delivering maximum results — restoring, healing, and elevating your skin.</p>
-  <div style="margin-top:1.5rem;text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
-    <p style="font-weight:600;font-size:13px;margin-bottom:.6rem">Where do you want to begin?</p>
-    <p style="font-size:11px;color:var(--g55);line-height:1.8">1. Know your skin type? Bundle our products and build your perfect routine.<br>2. Need maximum healing and transformation? Choose your skin type below</p>
-  </div>
-</section>
-
-<!-- 2 BOXES -->
-<section class="container" style="margin-top:2rem">
-  <div class="h2box">
-    <div style="position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:4/3" onclick="go('products')">
-      <img src="https://models.valts.online/celara/h2.png" alt="All our 8 products" style="width:100%;height:100%;object-fit:cover">
-      <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;padding:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-align:center">All our 8 products</div>
+    <!-- MENU OVERLAY -->
+    <div class="ov ov-bg" id="mov">
+        <span style="position:absolute;top:1.2rem;right:1.2rem;font-size:1.8rem;cursor:pointer" onclick="closeM()">&times;</span>
+        <div class="mov-i" onclick="go('home');closeM()">Home</div>
+        <div class="mov-i" onclick="go('products');closeM()">Products</div>
+        <div class="mov-i" onclick="go('skintypes');closeM()">Skin Type</div>
+        <div class="mov-i" onclick="openS();closeM()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="mov-i" onclick="openC();closeM()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </div>
     </div>
-    <div style="position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:4/3" onclick="go('skintypes')">
-      <img src="https://models.valts.online/celara/h3.png" alt="Your Skin Type" style="width:100%;height:100%;object-fit:cover">
-      <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;padding:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-align:center">Your Skin Type</div>
+
+    <!-- SVG ICONS TEMPLATE -->
+    <template id="ico-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></template>
+    <template id="ico-cart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></template>
+    <template id="ico-ig"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></template>
+    <template id="ico-tt"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></template>
+    <template id="ico-wa"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></template>
+
+    <!-- ========== HELPER: STANDARD NAV (HOME / PRODUCTS / SKINTYPES) ========== -->
+    <template id="tpl-stdnav">
+        <div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
+            <div class="container">
+                <!-- DESKTOP NAV -->
+                <div class="dnav" style="padding:10px 0">
+                    <div style="cursor:pointer" data-nav="logo"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+                    <div data-nav="oval"></div>
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <span data-nav="search" style="cursor:pointer"></span>
+                        <span data-nav="cartbtn" style="cursor:pointer;position:relative"></span>
+                        <button class="btn-bk" data-nav="shopnow" style="padding:6px 16px;font-size:10px">Shop Now</button>
+                    </div>
+                </div>
+                <!-- PHONE NAV -->
+                <div class="mnav" style="flex-direction:column">
+                    <div class="mnav-row1">
+                        <div style="cursor:pointer" data-nav="logo"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
+                        <div style="display:flex;align-items:center;gap:10px">
+                            <span data-nav="search" style="cursor:pointer"></span>
+                            <span data-nav="cartbtn" style="cursor:pointer;position:relative"></span>
+                        </div>
+                    </div>
+                    <div class="mnav-row2">
+                        <div data-nav="oval" style="width:100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- ====================== PAGE: HOME ====================== -->
+    <div class="page active" id="pg-home">
+
+        <!-- NAV -->
+        <div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
+            <div class="container">
+                <div class="dnav" style="padding:10px 0">
+                    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+                    <div class="noval" id="h-oval"><div class="noval-s" id="h-oval-s"></div><div class="noval-i on" onclick="go('home')">Home</div><div class="noval-i" onclick="go('products')">Products</div><div class="noval-i" onclick="go('skintypes')">Skin Type</div></div>
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                        <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+                        <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
+                    </div>
+                </div>
+                <div class="mnav" style="flex-direction:column">
+                    <div class="mnav-row1">
+                        <div style="cursor:pointer" onclick="go('home')"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
+                        <div style="display:flex;align-items:center;gap:10px">
+                            <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                            <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+                        </div>
+                    </div>
+                    <div class="mnav-row2">
+                        <div class="noval" id="h-oval-m" style="width:100%"><div class="noval-s" id="h-oval-m-s"></div><div class="noval-i on" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <section style="width:100%;position:relative">
+            <img src="https://models.celara.online/celara/p1.png" alt="Celara Skincare" style="width:100%;aspect-ratio:16/7;object-fit:cover">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+                <span style="font-family:var(--fserif);font-weight:300;letter-spacing:.35em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.5);font-size:clamp(1.2rem,4vw,2.6rem)">BEAUTY. CARE. CONFIDENCE.</span>
+            </div>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="mw"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+
+        <!-- SALES -->
+        <section class="container" style="margin-top:2rem;text-align:center;max-width:680px">
+            <p style="font-size:13px;font-weight:300;line-height:1.9;color:var(--g55)">Celara brings nature's purest ingredients to your skin for visible transformation and lasting radiance.<br>Crafted from nature's finest botanicals, delivering maximum results — restoring, healing, and elevating your skin.</p>
+            <div style="margin-top:1.5rem;text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
+                <p style="font-weight:600;font-size:13px;margin-bottom:.6rem">Where do you want to begin?</p>
+                <p style="font-size:11px;color:var(--g55);line-height:1.8">1. Know your skin type? Bundle our products and build your perfect routine.<br>2. Need maximum healing and transformation? Choose your skin type below</p>
+            </div>
+        </section>
+
+        <!-- 2 BOXES -->
+        <section class="container" style="margin-top:2rem">
+            <div class="h2box">
+                <div style="position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:4/3" onclick="go('products')">
+                    <img src="https://models.celara.online/celara/h2.png" alt="All our 8 products" style="width:100%;height:100%;object-fit:cover">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;padding:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-align:center">All our 8 products</div>
+                </div>
+                <div style="position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:4/3" onclick="go('skintypes')">
+                    <img src="https://models.celara.online/celara/h3.png" alt="Your Skin Type" style="width:100%;height:100%;object-fit:cover">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;padding:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-align:center">Your Skin Type</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="container" style="margin-top:2rem;text-align:center">
+            <p style="font-family:var(--fserif);font-size:20px;font-weight:500;letter-spacing:.12em">Confidence comes from results.</p>
+        </section>
+
+        <!-- BEFORE/AFTER -->
+        <section class="container" style="margin-top:1.5rem">
+            <div class="ba-wrap" id="h-ba-wrap">
+                <div class="ba-side" onclick="openLB(document.getElementById('h-bb').src)"><img id="h-bb" src="https://models.celara.online/celara/bb1.png" alt="Before"></div>
+                <div class="ba-side" onclick="openLB(document.getElementById('h-ba').src)"><img id="h-ba" src="https://models.celara.online/celara/ba1.png" alt="After"></div>
+            </div>
+        </section>
+
+        <!-- END TEXT -->
+        <section class="container" style="margin-top:1.5rem;text-align:center">
+            <p style="font-weight:600;font-size:13px">You can be next.</p>
+            <p style="font-size:10px;color:var(--g99);margin-top:4px">Copyright &copy; 2026 CELARA SKINCARE. All Rights Reserved.</p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+            <div class="container">
+                <div class="ftr-desktop">
+                    <div><img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+                    <div style="display:flex;gap:14px;align-items:center">
+                        <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+                        <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                    </div>
+                    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+                </div>
+                <div class="ftr-phone">
+                    <div style="display:flex;gap:16px;align-items:center">
+                        <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+                        <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px">
+                        <img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
+                        <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-  </div>
-</section>
 
-<!-- CLOSING -->
-<section class="container" style="margin-top:2rem;text-align:center">
-  <p style="font-family:var(--fserif);font-size:20px;font-weight:500;letter-spacing:.12em">Confidence comes from results.</p>
-</section>
+    <!-- ====================== PAGE: PRODUCTS ====================== -->
+    <div class="page" id="pg-products">
+        <!-- NAV -->
+        <div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
+            <div class="container">
+                <div class="dnav" style="padding:10px 0">
+                    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+                    <div class="noval" id="p-oval"><div class="noval-s" id="p-oval-s"></div><div class="noval-i" onclick="go('home')">Home</div><div class="noval-i on" onclick="go('products')">Products</div><div class="noval-i" onclick="go('skintypes')">Skin Type</div></div>
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                        <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+                        <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
+                    </div>
+                </div>
+                <div class="mnav" style="flex-direction:column">
+                    <div class="mnav-row1">
+                        <div style="cursor:pointer" onclick="go('home')"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
+                        <div style="display:flex;align-items:center;gap:10px">
+                            <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                            <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                        </div>
+                    </div>
+                    <div class="mnav-row2">
+                        <div class="noval" id="p-oval-m" style="width:100%"><div class="noval-s" id="p-oval-m-s"></div><div class="noval-i" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i on" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!-- BEFORE/AFTER -->
-<section class="container" style="margin-top:1.5rem">
-  <div class="ba-wrap" id="h-ba-wrap">
-    <div class="ba-side" onclick="openLB(document.getElementById('h-bb').src)"><img id="h-bb" src="https://models.valts.online/celara/bb1.png" alt="Before"></div>
-    <div class="ba-side" onclick="openLB(document.getElementById('h-ba').src)"><img id="h-ba" src="https://models.valts.online/celara/ba1.png" alt="After"></div>
-  </div>
-</section>
+        <!-- HERO CAROUSEL -->
+        <section class="container" style="margin-top:10px">
+            <div class="csl" id="ph-csl">
+                <div class="csl-t" id="ph-csl-t">
+                    <div class="csl-sl" style="position:relative"><img src="https://models.celara.online/celara/p1.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
+                    <div class="csl-sl" style="position:relative"><img src="https://models.celara.online/celara/p2.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
+                    <div class="csl-sl" style="position:relative"><img src="https://models.celara.online/celara/p3.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
+                    <div class="csl-sl" style="position:relative"><img src="https://models.celara.online/celara/p4.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
+                </div>
+                <button class="csl-btn prv" onclick="cslMove('ph',-1)">&#8249;</button>
+                <button class="csl-btn nxt" onclick="cslMove('ph',1)">&#8250;</button>
+            </div>
+            <div class="csl-dots" id="ph-dots"></div>
+        </section>
 
-<!-- END TEXT -->
-<section class="container" style="margin-top:1.5rem;text-align:center">
-  <p style="font-weight:600;font-size:13px">You can be next.</p>
-  <p style="font-size:10px;color:var(--g99);margin-top:4px">Copyright &copy; 2026 CELARA SKINCARE. All Rights Reserved.</p>
-</section>
+        <!-- 8 products text -->
+        <section class="container" style="text-align:center;margin-top:10px"><p style="font-weight:600;letter-spacing:.1em;font-size:13px">8 products — All skin types.</p></section>
 
-<!-- FOOTER -->
-<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
-<div class="container">
-  <div class="ftr-desktop">
-    <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
-    <div style="display:flex;gap:14px;align-items:center">
-      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+        <!-- MARQUEE -->
+        <div class="mw" style="margin-top:8px"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+
+        <!-- SALES -->
+        <section class="container" style="text-align:center;margin-top:1.2rem;max-width:620px">
+            <p style="font-size:13px;font-weight:300;color:var(--g55);line-height:1.7">Discover Celara's full collection — each product crafted with nature's most potent ingredients.<br>Build the routine your skin has been waiting for.</p>
+        </section>
+
+        <!-- SIZE SEL -->
+        <section class="container" style="text-align:center;margin-top:1rem">
+            <div class="ssel" id="p-ssel"><div class="ssel-i on" onclick="setPrdSize('small')">Small</div><div class="ssel-i" onclick="setPrdSize('large')">Large</div></div>
+        </section>
+
+        <!-- PRODUCT GRID -->
+        <section class="container" style="margin-top:1.5rem"><div class="pgrid" id="p-grid"></div></section>
+
+        <!-- CLOSING -->
+        <section class="container" style="margin-top:2rem;text-align:center;max-width:580px">
+            <p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7">These products have healed hundreds. You can be next. Start your routine today and experience the difference nature can make.</p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+            <div class="container">
+                <div class="ftr-desktop">
+                    <div><img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+                    <div style="display:flex;gap:14px;align-items:center">
+                        <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+                        <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                    </div>
+                    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+                </div>
+                <div class="ftr-phone">
+                    <div style="display:flex;gap:16px;align-items:center">
+                        <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+                        <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px">
+                        <img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
+                        <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
-  </div>
-  <div class="ftr-phone">
-    <div style="display:flex;gap:16px;align-items:center">
-      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+
+    <!-- ====================== PAGE: SKIN TYPES ====================== -->
+    <div class="page" id="pg-skintypes">
+        <!-- NAV -->
+        <div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
+            <div class="container">
+                <div class="dnav" style="padding:10px 0">
+                    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+                    <div class="noval" id="st-oval"><div class="noval-s" id="st-oval-s"></div><div class="noval-i" onclick="go('home')">Home</div><div class="noval-i" onclick="go('products')">Products</div><div class="noval-i on" onclick="go('skintypes')">Skin Type</div></div>
+                    <div style="display:flex;align-items:center;gap:10px">
+                        <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                        <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+                        <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
+                    </div>
+                </div>
+                <div class="mnav" style="flex-direction:column">
+                    <div class="mnav-row1">
+                        <div style="cursor:pointer" onclick="go('home')"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
+                        <div style="display:flex;align-items:center;gap:10px">
+                            <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                            <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                        </div>
+                    </div>
+                    <div class="mnav-row2">
+                        <div class="noval" id="st-oval-m" style="width:100%"><div class="noval-s" id="st-oval-m-s"></div><div class="noval-i" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i on" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <section style="width:100%;position:relative">
+            <img src="https://models.celara.online/celara/p3.png" alt="Skin Types" style="width:100%;aspect-ratio:16/7;object-fit:cover">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-weight:600;letter-spacing:.15em;color:#fff;font-size:13px;text-shadow:0 2px 20px rgba(0,0,0,.5)">8 products — All-Skintypes.</span></div>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="mw"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+
+        <!-- SALES -->
+        <section class="container" style="text-align:center;margin-top:1.2rem;max-width:620px">
+            <p style="font-size:13px;font-weight:300;color:var(--g55);line-height:1.7">Your skin is unique. Choose your type below and discover the complete Celara package designed specifically for deep healing and transformation</p>
+            <p style="font-weight:600;letter-spacing:.1em;font-size:13px;margin-top:1.2rem;text-transform:uppercase">Types / Packages</p>
+        </section>
+
+        <!-- PACKAGES GRID -->
+        <section class="container" style="margin-top:1.2rem"><div class="pkgrid" id="st-grid"></div></section>
+
+        <!-- CLOSING -->
+        <section class="container" style="margin-top:2rem;text-align:center;max-width:580px">
+            <p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7">Ready to transform? Select your skin type above and begin your personalized Celara journey today.</p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+            <div class="container">
+                <div class="ftr-desktop">
+                    <div><img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+                    <div style="display:flex;gap:14px;align-items:center">
+                        <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+                        <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                    </div>
+                    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+                </div>
+                <div class="ftr-phone">
+                    <div style="display:flex;gap:16px;align-items:center">
+                        <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+                        <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px">
+                        <img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
+                        <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div style="display:flex;align-items:center;gap:16px">
-      <img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
-      <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
+
+    <!-- ====================== PAGE: SKINTYPE DETAIL ====================== -->
+    <div class="page" id="pg-std">
+        <!-- NAV: Logo + Hamburger -->
+        <div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee);padding:10px 0">
+            <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+                <div style="cursor:pointer" onclick="go('home')"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+                <span onclick="openM()" style="cursor:pointer;font-size:22px">☰</span>
+            </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="container" style="margin-top:6px">
+            <span onclick="go('skintypes')" style="cursor:pointer;display:flex;align-items:center;gap:4px;font-size:12px;font-weight:500">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back
+            </span>
+        </div>
+
+        <!-- BA SIDE BY SIDE -->
+        <section class="container" style="margin-top:10px">
+            <div class="ba-wrap">
+                <div class="ba-side" onclick="openLB(document.getElementById('std-bb').src)"><img id="std-bb" src="" alt="Before"></div>
+                <div class="ba-side" onclick="openLB(document.getElementById('std-ba').src)"><img id="std-ba" src="" alt="After"></div>
+            </div>
+        </section>
+
+        <!-- NAME -->
+        <div class="container" style="text-align:center;margin-top:10px"><p style="font-weight:600;letter-spacing:.08em;font-size:13px" id="std-name"></p></div>
+
+        <!-- MARQUEE -->
+        <div class="mw" style="margin-top:8px"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+
+        <!-- BUY OPTIONS -->
+        <section class="container" style="margin-top:1rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gee)">
+                <div><span style="font-weight:600;font-size:14px" id="std-lp"></span><br><span style="font-size:10px;color:var(--g55)">all large</span></div>
+                <button class="btn-bk" onclick="buyPkg('large')">Shop Now</button>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0">
+                <div><span style="font-weight:600;font-size:14px" id="std-sp"></span><br><span style="font-size:10px;color:var(--g55)">all small</span></div>
+                <button class="btn-bk" onclick="buyPkg('small')">Shop Now</button>
+            </div>
+        </section>
+
+        <!-- SIZE SEL -->
+        <section class="container" style="text-align:center;margin-top:.8rem">
+            <div class="ssel" id="std-ssel"><div class="ssel-i on" onclick="setSTDSize('small')">Small</div><div class="ssel-i" onclick="setSTDSize('large')">Large</div></div>
+        </section>
+
+        <!-- PRODUCTS LIST -->
+        <section class="container" style="margin-top:.8rem"><p style="font-size:11px;color:var(--g55)" id="std-pl"></p></section>
+
+        <!-- SALES MSG -->
+        <section class="container" style="margin-top:.8rem;max-width:600px"><p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7" id="std-msg"></p></section>
+
+        <!-- PRODUCT BOXES -->
+        <section class="container" style="margin-top:1.2rem"><div class="pgrid" id="std-pgrid"></div></section>
+
+        <!-- CLOSING -->
+        <section class="container" style="margin-top:2rem;text-align:center">
+            <p style="font-size:13px;font-weight:500;color:var(--g55);line-height:1.6">Trust the process by starting the process. Today.</p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+            <div class="container">
+                <div class="ftr-desktop">
+                    <div><img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+                    <div style="display:flex;gap:14px;align-items:center">
+                        <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+                        <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                    </div>
+                    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+                </div>
+                <div class="ftr-phone">
+                    <div style="display:flex;gap:16px;align-items:center">
+                        <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+                        <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+                        <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px">
+                        <img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
+                        <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-  </div>
-</div>
-</footer>
-</div>
 
-<!-- ====================== PAGE: PRODUCTS ====================== -->
-<div class="page" id="pg-products">
-<!-- NAV -->
-<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
-<div class="container">
-<div class="dnav" style="padding:10px 0">
-  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
-  <div class="noval" id="p-oval"><div class="noval-s" id="p-oval-s"></div><div class="noval-i" onclick="go('home')">Home</div><div class="noval-i on" onclick="go('products')">Products</div><div class="noval-i" onclick="go('skintypes')">Skin Type</div></div>
-  <div style="display:flex;align-items:center;gap:10px">
-    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
-    <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
-  </div>
-</div>
-<div class="mnav" style="flex-direction:column">
-  <div class="mnav-row1">
-    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
-    <div style="display:flex;align-items:center;gap:10px">
-      <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-      <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+    <!-- ====================== PAGE: PRODUCT DETAIL ====================== -->
+    <div class="page" id="pg-pd">
+        <!-- NAV: Logo + Search + Cart + Menu -->
+        <div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee);padding:10px 0">
+            <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+                <div style="cursor:pointer" onclick="go('home')"><img src="https://models.celara.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
+                <div style="display:flex;align-items:center;gap:10px">
+                    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
+                    <span onclick="openM()" style="cursor:pointer;font-size:20px">☰</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="container" style="margin-top:6px">
+            <span id="pd-back" onclick="goBack()" style="cursor:pointer;display:flex;align-items:center;gap:4px;font-size:12px;font-weight:500">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back
+            </span>
+        </div>
+
+        <!-- MAIN LAYOUT -->
+        <section class="container" style="margin-top:10px">
+            <div class="pd-lay">
+                <!-- LEFT: Images -->
+                <div>
+                    <p style="font-weight:600;font-size:18px;margin-bottom:8px;font-family:var(--fserif);letter-spacing:.04em" id="pd-title"></p>
+                    <div class="csl" id="pd-csl">
+                        <div class="csl-t" id="pd-csl-t"></div>
+                        <button class="csl-btn prv" onclick="cslMove('pd',-1)">&#8249;</button>
+                        <button class="csl-btn nxt" onclick="cslMove('pd',1)">&#8250;</button>
+                    </div>
+                    <div class="csl-dots" id="pd-dots"></div>
+                </div>
+                <!-- RIGHT: Details -->
+                <div>
+                    <div style="margin-bottom:12px">
+                        <span style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em">Size</span>
+                        <div class="ssel" id="pd-ssel" style="margin-top:6px"><div class="ssel-i on" onclick="setPDSize('small')">Small</div><div class="ssel-i" onclick="setPDSize('large')">Large</div></div>
+                    </div>
+                    <p style="font-weight:700;font-size:22px" id="pd-price"></p>
+                    <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+                        <button class="btn-bk" onclick="buyPD()">Shop Now</button>
+                        <span onclick="buyPD()" style="cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                    </div>
+                    <p style="font-size:12px;color:var(--g55);margin-top:8px"><span style="font-weight:500;color:var(--bk)">Capacity:</span> <span id="pd-cap"></span></p>
+                    <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+                        <span style="font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.08em">Quantity</span>
+                        <div class="qctrl"><button class="qbtn" onclick="chgQty(-1)">−</button><span class="qval" id="pd-qty">1</span><button class="qbtn" onclick="chgQty(1)">+</button></div>
+                    </div>
+                    <!-- EXPANDABLES -->
+                    <div style="margin-top:1.2rem">
+                        <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Description</span><span>+</span></div><div class="exp-c" id="pd-desc"></div></div>
+                        <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>How to use the product</span><span>+</span></div><div class="exp-c" id="pd-howto"></div></div>
+                        <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Ingredients</span><span>+</span></div><div class="exp-c" id="pd-ing"></div></div>
+                        <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Delivery info</span><span>+</span></div><div class="exp-c">We are available Monday to Sunday from 8:00 AM to 5:00 PM. Same-day delivery is possible when you order early before 3pm. Delivery is handled via our own trusted rider, and the transport fee is calculated based on your location and covered by the client. All orders and deliveries are coordinated smoothly through WhatsApp for your convenience.</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- YOU MAY ALSO LIKE -->
+        <section class="container" style="margin-top:2rem">
+            <p style="font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">You may also like</p>
+            <div class="sggrid" id="pd-sug"></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
+            <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem">
+                <div><img src="https://models.celara.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
+                <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
+            </div>
+        </footer>
     </div>
-  </div>
-  <div class="mnav-row2">
-    <div class="noval" id="p-oval-m" style="width:100%"><div class="noval-s" id="p-oval-m-s"></div><div class="noval-i" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i on" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
-  </div>
-</div>
-</div>
-</div>
 
-<!-- HERO CAROUSEL -->
-<section class="container" style="margin-top:10px">
-  <div class="csl" id="ph-csl">
-    <div class="csl-t" id="ph-csl-t">
-      <div class="csl-sl" style="position:relative"><img src="https://models.valts.online/celara/p1.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
-      <div class="csl-sl" style="position:relative"><img src="https://models.valts.online/celara/p2.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
-      <div class="csl-sl" style="position:relative"><img src="https://models.valts.online/celara/p3.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
-      <div class="csl-sl" style="position:relative"><img src="https://models.valts.online/celara/p4.png" alt="" style="aspect-ratio:16/8;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--fserif);font-weight:300;letter-spacing:.2em;color:#fff;font-size:clamp(.9rem,2.5vw,1.4rem);text-shadow:0 2px 20px rgba(0,0,0,.5)">You just never knew Celara.</span></div></div>
-    </div>
-    <button class="csl-btn prv" onclick="cslMove('ph',-1)">&#8249;</button>
-    <button class="csl-btn nxt" onclick="cslMove('ph',1)">&#8250;</button>
-  </div>
-  <div class="csl-dots" id="ph-dots"></div>
-</section>
+    <!-- ====================== JS ====================== -->
+    <script>
+        const C = 'https://models.celara.online/celara/';
+        const WA = '256770892824';
 
-<!-- 8 products text -->
-<section class="container" style="text-align:center;margin-top:10px"><p style="font-weight:600;letter-spacing:.1em;font-size:13px">8 products — All skin types.</p></section>
+        const PR = [
+            { id: 'f', nm: 'Facial Cleanser', s: { p: 35000, c: '100ml', i: 'fs1.png' }, l: { p: 60000, c: '250ml',
+                    i: 'fb1.png' }, v: 'fv.mp4', cb: 'fcb.png',
+                d: 'Deeply cleanses without stripping, leaving your skin fresh, balanced, and ready to absorb nourishment. Removes impurities and excess oil while preserving your skin\'s natural glow and softness.',
+                h: '1. Moisten face.\n2. Lather cleanser apply a small amount and gently massage in circular motions for 30–60 seconds.\n3. Rinse clean.\n4. Follow with your Celara routine.',
+                ig: 'Aqua, Cocamidopropyl Betain, Honey (Mel), Turmeric (Curcuma Longa) Extract, Tea Tree Oil (Melaleuca Alternifolia), Xanthan Gum, Carboxymethyl Cellulose (CMC), Fragrance, Preservative.' },
+            { id: 'g', nm: 'Glow Serum Oil', s: { p: 25000, c: '60ml', i: 'gs1.png' }, l: { p: 45000, c: '100ml',
+                    i: 'gb1.png' }, v: 'gv.mp4', cb: 'gcb.png',
+                d: 'Delivers intense hydration and a visible luminous glow, revealing smoother, more radiant skin. Penetrates deeply to brighten and plump your skin for that healthy, lit-from-within look.',
+                h: '1. Dispense a few drops onto clean skin.\n2. Gently massage until absorbed. Allow to sink in fully.\n3. Use daily for radiant glow, morning and/or night.\n4. Follow with moisturizer.',
+                ig: 'Helianthus Annuus (Sunflower) Seed Oil, Daucus Carota Sativa (Carrot) Seed Oil, Tocopherol (Vitamin E), Vanilla Planifolia Fruit Extract, Jasminum Officinale (Jasmine) Oil, Citrus Limon (Lemon) Peel Oil.' },
+            { id: 't', nm: 'Balancing Toner', s: { p: 25000, c: '60ml', i: 'ts1.png' }, l: { p: 45000, c: '100ml',
+                    i: 'tb1.png' }, v: 'tv.mp4', cb: 'tcb.png',
+                d: 'Perfectly balances skin pH, minimizes pores, and prepares skin for maximum absorption. Soothes, refreshes, and creates the ideal foundation for glowing, even-toned skin.',
+                h: '1. Cleanse face first.\n2. Apply toner with cotton or hands.\n3. Pat gently into skin. Let it absorb.\n4. Follow with serum or moisturizer.',
+                ig: 'Water (Aqua), Glycerin, Apple Cider Vinegar (Malus Domestica Fruit Vinegar), Hibiscus Sabdariffa Flower Extract, Phenoxyethanol (Optiphen).' },
+            { id: 'bu', nm: 'Body Butter', s: { p: 35000, c: '120g', i: 'bus1.png' }, l: { p: 60000, c: '250g',
+                    i: 'bub1.png' }, v: 'buv.mp4', cb: 'bucb.png',
+                d: 'Deeply nourishes and locks in moisture for soft, smooth, supple skin all day long. Transforms dry, rough skin into silky, hydrated perfection with lasting comfort.',
+                h: '1. Apply on clean, slightly damp skin.\n2. Massage into skin until absorbed.\n3. Focus on dry areas.\n4. Use daily, especially after shower, morning and night.',
+                ig: 'Petrolatum, Shea Butter, Ghee, Helianthus Annuus (Sunflower) Seed Oil, Stearic Acid, Daucus Carota Sativa (Carrot) Seed Oil, Aloe Barbadensis Leaf Oil, Beeswax (Cera Alba), Vanilla Planifolia Fruit Extract.' },
+            { id: 'ac', nm: 'Acne Bar', s: { p: 50000, c: '120g', i: 'acs1.png' }, l: null, v: 'acv.mp4', cb: 'accb.png',
+                d: 'Clears breakouts, reduces inflammation, and helps reveal clearer, calmer skin. Targets acne and blemishes while soothing and balancing your complexion.',
+                h: '1. Lather / Wet bar and face.\n2. Gently rub on affected areas to create lather for 1 minute.\n3. Leave for 30–60 seconds then rinse and pat dry.\n4. Use morning and evening.',
+                ig: 'Sodium Palmate (Soap Base from Palm Oil), Aqua (Water), Aloe Barbadensis Leaf Juice, Honey (Mel), Elaeis Guineensis (Palm) Oil, Hibiscus Sabdariffa Flower Extract, Citrus Limon (Lemon) Peel Oil, Melaleuca Alternifolia (Tea Tree) Leaf Oil, Azadirachta Indica (Neem) Leaf Extract.' },
+            { id: 'cg', nm: 'Cleansing & Glow Soap', s: { p: 30000, c: '120g', i: 'cgs1.png' }, l: null, v: 'cgv.mp4',
+                cb: 'cgcb.png',
+                d: 'Removes dirt and reveals brighter, smoother, more luminous and lasting soft skin with every use. Cleanses deeply yet leaves skin glowing, hydrated, and beautifully refreshed.',
+                h: '1. Lather / Wet bar and face.\n2. Lather and shower whole body gently.\n3. Rinse thoroughly.\n4. Use daily for glowing skin.',
+                ig: 'Sodium Palmate (Soap Base from Palm Oil), Aqua (Water), Aloe Barbadensis Leaf Juice, Honey (Mel), Elaeis Guineensis (Palm) Oil, Hibiscus Sabdariffa Flower Extract, Citrus Limon (Lemon) Peel Oil, Melaleuca Alternifolia (Tea Tree) Leaf Oil, Azadirachta Indica (Neem) Leaf Extract.' },
+            { id: 'm', nm: 'Moisturizer Cream', s: { p: 45000, c: '100ml', i: 'ms1.png' }, l: { p: 75000, c: '250ml',
+                    i: 'mb1.png' }, v: 'mv.mp4', cb: 'mcb.png',
+                d: 'Locks in deep hydration, smooths texture, and leaves skin supple and radiant. Provides all-day moisture and comfort while improving skin\'s natural glow.',
+                h: '1. On clean skin, apply desired amount.\n2. Smooth evenly over face.\n3. Massage gently until absorbed. Lock in moisture.\n4. Daily use recommended.',
+                ig: 'Water, Aloe Leaf Juice, Glycerin, Niacinamide, Polysorbate 80, Helianthus Annuus (Sunflower) Seed Oil, Tea Leaf Oil, Neem Oil, Phenoxyethanol (Optiphen), Tocopherol (Vitamin E), Fragrance (Carrot).' },
+            { id: 'e', nm: 'Exfoliating Scrub', s: { p: 35000, c: '120g', i: 'es1.png' }, l: { p: 60000, c: '250g',
+                    i: 'eb1.png' }, v: 'ev.mp4', cb: 'ecb.png',
+                d: 'Gently removes dead skin cells to reveal smoother, brighter, and more even skin. Refines texture and unclogs pores for a fresh, glowing complexion.',
+                h: '1. Cleanse face first.\n2. Apply scrub and gently massage in circular motions.\n3. Rinse thoroughly.\n4. Use 4–5 times per week.',
+                ig: 'Aqua, Coffee Seed Powder, Sucrose, Sodium Chloride, Cocamidopropyl Betaine, Sunflower Seed Oil, Cetyl Alcohol (E-Wax), Stearic Acid, Turmeric Extract, Optiphen.' }
+        ];
 
-<!-- MARQUEE -->
-<div class="mw" style="margin-top:8px"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+        const PK = [
+            { id: 1, nm: 'Balanced Skin Package', bb: 'bb1.png', ba: 'ba1.png', it: ['cg', 'f', 't', 'bu', 'g', 'e'],
+                sp: 185000, lp: 300000,
+                d: 'Your skin is already in harmony but needs consistent care. This complete package maintains balance, boosts radiance, and prevents future concerns.' },
+            { id: 2, nm: 'Hyperpigmented / Dark Spots / Uneven Tone Package', bb: 'bb2.png', ba: 'ba2.png',
+                it: ['cg', 'f', 't', 'm', 'e', 'g', 'ac'], sp: 245000, lp: 365000,
+                d: 'Struggling with dark spots, patches, or uneven tone? This powerful package fades discoloration, hyperpigmentation and restores bright, even, radiant skin.' },
+            { id: 3, nm: 'Dry Skin Package', bb: 'bb3.png', ba: 'ba3.png', it: ['cg', 'f', 't', 'bu', 'g', 'e'],
+                sp: 185000, lp: 300000,
+                d: 'Constant dryness, tightness, and flakiness? This package deeply hydrates, repairs, and restores soft, supple, comfortable skin.' },
+            { id: 4, nm: 'Oily Skin (Acne/Pimples) Package', bb: 'bb4.png', ba: 'ba4.png', it: ['cg', 'f', 't', 'm', 'e',
+                    'ac'
+                ], sp: 220000, lp: 320000,
+                d: 'Oily skin with frequent breakouts and shine? End the cycle of acne and excess oil. These targeted products purify, soothe, and restore clarity to your complexion.' },
+            { id: 5, nm: 'Dry Skin (Pimples / Acne & Rashes) Package', bb: 'bb5.png', ba: 'ba5.png', it: ['cg', 'f', 't',
+                    'm', 'g', 'ac'
+                ], sp: 210000, lp: 305000,
+                d: 'Dry yet breaking out? This unique package hydrates deeply while calming acne and rashes for balanced, healed skin — this routine nourishes without clogging and clears blemishes gently.' },
+            { id: 6, nm: 'Combination Skin Package', bb: 'bb6.png', ba: 'ba6.png', it: ['cg', 'f', 't', 'm', 'g', 'e',
+                    'ac'
+                ], sp: 245000, lp: 365000,
+                d: 'Oily T-zone with dry cheeks? This package balances different areas, controls shine, and hydrates where needed.' },
+            { id: 7, nm: 'Stretch Marks Package', bb: 'bb7.png', ba: 'ba7.png', it: ['cg', 'f', 't', 'bu', 'g', 'e'],
+                sp: 185000, lp: 300000,
+                d: 'Visible stretch marks affecting your confidence? This package improves skin elasticity, fades marks, and restores smooth, even texture.' }
+        ];
 
-<!-- SALES -->
-<section class="container" style="text-align:center;margin-top:1.2rem;max-width:620px">
-  <p style="font-size:13px;font-weight:300;color:var(--g55);line-height:1.7">Discover Celara's full collection — each product crafted with nature's most potent ingredients.<br>Build the routine your skin has been waiting for.</p>
-</section>
+        // STATE
+        let curPage = 'home',
+            prevPage = 'home',
+            prSize = 'small',
+            stdSize = 'small',
+            pdSize = 'small',
+            pdQty = 1,
+            curPID = null,
+            curPKID = null;
+        let cart = [],
+            cslS = {},
+            hBAIdx = 0,
+            hBAInt;
 
-<!-- SIZE SEL -->
-<section class="container" style="text-align:center;margin-top:1rem">
-  <div class="ssel" id="p-ssel"><div class="ssel-i on" onclick="setPrdSize('small')">Small</div><div class="ssel-i" onclick="setPrdSize('large')">Large</div></div>
-</section>
+        // NAV
+        function go(p) {
+            prevPage = curPage;
+            curPage = p;
+            document.querySelectorAll('.page').forEach(e => e.classList.remove('active'));
+            const el = document.getElementById('pg-' + p);
+            if (el) el.classList.add('active');
+            window.scrollTo(0, 0);
+            updOvals();
+            updBadges();
+            if (p === 'home') startHBA();
+            else stopHBA();
+        }
 
-<!-- PRODUCT GRID -->
-<section class="container" style="margin-top:1.5rem"><div class="pgrid" id="p-grid"></div></section>
+        function updOvals() {
+            // desktop ovals
+            const map = { home: ['h-oval', 0], products: ['p-oval', 1], skintypes: ['st-oval', 2] };
+            Object.entries(map).forEach(([pg, [oid, activeIdx]]) => {
+                const o = document.getElementById(oid);
+                if (!o) return;
+                const items = o.querySelectorAll('.noval-i');
+                const sel = o.querySelector('.noval-s');
+                items.forEach((it, i) => { it.classList.toggle('on', i === activeIdx) });
+                const ai = items[activeIdx];
+                if (ai && sel) { sel.style.left = ai.offsetLeft + 'px';
+                    sel.style.width = ai.offsetWidth + 'px' }
+            });
+            // mobile ovals
+            const mmap = { home: ['h-oval-m', 0], products: ['p-oval-m', 1], skintypes: ['st-oval-m', 2] };
+            Object.entries(mmap).forEach(([pg, [oid, activeIdx]]) => {
+                const o = document.getElementById(oid);
+                if (!o) return;
+                const items = o.querySelectorAll('.noval-i');
+                const sel = o.querySelector('.noval-s');
+                items.forEach((it, i) => { it.classList.toggle('on', i === activeIdx) });
+                const ai = items[activeIdx];
+                if (ai && sel) { sel.style.left = ai.offsetLeft + 'px';
+                    sel.style.width = ai.offsetWidth + 'px' }
+            });
+        }
 
-<!-- CLOSING -->
-<section class="container" style="margin-top:2rem;text-align:center;max-width:580px">
-  <p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7">These products have healed hundreds. You can be next. Start your routine today and experience the difference nature can make.</p>
-</section>
+        // CAROUSEL
+        function cslInit(id, n) { cslS[id] = { c: 0, t: n, auto: null };
+            cslDots(id) }
 
-<!-- FOOTER -->
-<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
-<div class="container">
-  <div class="ftr-desktop">
-    <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
-    <div style="display:flex;gap:14px;align-items:center">
-      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-    </div>
-    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
-  </div>
-  <div class="ftr-phone">
-    <div style="display:flex;gap:16px;align-items:center">
-      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-    </div>
-    <div style="display:flex;align-items:center;gap:16px">
-      <img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
-      <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
-    </div>
-  </div>
-</div>
-</footer>
-</div>
+        function cslMove(id, d) { const s = cslS[id]; if (!s) return;
+            s.c = (s.c + d + s.t) % s.t; const t = document.getElementById(id + '-csl-t') || document.getElementById(id +
+                '-t'); if (t) t.style.transform = 'translateX(-' + s.c * 100 + '%)';
+            cslDots(id) }
 
-<!-- ====================== PAGE: SKIN TYPES ====================== -->
-<div class="page" id="pg-skintypes">
-<!-- NAV -->
-<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee)">
-<div class="container">
-<div class="dnav" style="padding:10px 0">
-  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
-  <div class="noval" id="st-oval"><div class="noval-s" id="st-oval-s"></div><div class="noval-i" onclick="go('home')">Home</div><div class="noval-i" onclick="go('products')">Products</div><div class="noval-i on" onclick="go('skintypes')">Skin Type</div></div>
-  <div style="display:flex;align-items:center;gap:10px">
-    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
-    <button class="btn-bk" onclick="openC()" style="padding:6px 14px;font-size:10px">Shop Now</button>
-  </div>
-</div>
-<div class="mnav" style="flex-direction:column">
-  <div class="mnav-row1">
-    <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:26px;object-fit:contain"></div>
-    <div style="display:flex;align-items:center;gap:10px">
-      <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-      <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
-    </div>
-  </div>
-  <div class="mnav-row2">
-    <div class="noval" id="st-oval-m" style="width:100%"><div class="noval-s" id="st-oval-m-s"></div><div class="noval-i" onclick="go('home')" style="flex:1;text-align:center">Home</div><div class="noval-i" onclick="go('products')" style="flex:1;text-align:center">Products</div><div class="noval-i on" onclick="go('skintypes')" style="flex:1;text-align:center">Skin Type</div></div>
-  </div>
-</div>
-</div>
-</div>
+        function cslGo(id, i) { const s = cslS[id]; if (!s) return;
+            s.c = i; const t = document.getElementById(id + '-csl-t') || document.getElementById(id + '-t'); if (t) t.style
+                    .transform = 'translateX(-' + s.c * 100 + '%)';
+            cslDots(id) }
 
-<!-- HERO -->
-<section style="width:100%;position:relative">
-  <img src="https://models.valts.online/celara/p3.png" alt="Skin Types" style="width:100%;aspect-ratio:16/7;object-fit:cover">
-  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-weight:600;letter-spacing:.15em;color:#fff;font-size:13px;text-shadow:0 2px 20px rgba(0,0,0,.5)">8 products — All-Skintypes.</span></div>
-</section>
+        function cslDots(id) { const d = document.getElementById(id + '-dots'); if (!d) return; const s = cslS[id];
+            d.innerHTML = '';
+            for (let i = 0; i < s.t; i++) { const dot = document.createElement('span');
+                dot.className = 'csl-dot' + (i === s.c ? ' on' : '');
+                dot.onclick = () => cslGo(id, i);
+                d.appendChild(dot) } }
 
-<!-- MARQUEE -->
-<div class="mw"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+        function cslAuto(id, ms) { const s = cslS[id]; if (!s) return; if (s.auto) clearInterval(s.auto);
+            s.auto = setInterval(() => cslMove(id, 1), ms || 5000) }
 
-<!-- SALES -->
-<section class="container" style="text-align:center;margin-top:1.2rem;max-width:620px">
-  <p style="font-size:13px;font-weight:300;color:var(--g55);line-height:1.7">Your skin is unique. Choose your type below and discover the complete Celara package designed specifically for deep healing and transformation</p>
-  <p style="font-weight:600;letter-spacing:.1em;font-size:13px;margin-top:1.2rem;text-transform:uppercase">Types / Packages</p>
-</section>
+        function cslStopAuto(id) { const s = cslS[id]; if (s && s.auto) { clearInterval(s.auto);
+                s.auto = null } }
 
-<!-- PACKAGES GRID -->
-<section class="container" style="margin-top:1.2rem"><div class="pkgrid" id="st-grid"></div></section>
+        // PRODUCTS PAGE
+        function setPrdSize(sz) {
+            prSize = sz;
+            document.querySelectorAll('#p-ssel .ssel-i').forEach(o => o.classList.toggle('on', o.textContent.toLowerCase() ===
+                sz));
+            renderPGrid();
+        }
 
-<!-- CLOSING -->
-<section class="container" style="margin-top:2rem;text-align:center;max-width:580px">
-  <p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7">Ready to transform? Select your skin type above and begin your personalized Celara journey today.</p>
-</section>
+        function renderPGrid() {
+            const g = document.getElementById('p-grid');
+            g.innerHTML = '';
+            PR.forEach(p => {
+                const sz = prSize === 'large' && p.l ? p.l : p.s;
+                const q = gq[p.id] || 1;
+                const totalPrice = sz.p * q;
+                const d = document.createElement('div');
+                d.className = 'pcard';
+                d.innerHTML =
+                    `<div style="position:relative"><img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer" onclick="event.stopPropagation();openPD('${p.id}')">View</div></div><div class="pcard-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px"><div class="qctrl"><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',-1)">−</button><span class="qval" id="gq-${p.id}">${q}</span><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',1)">+</button></div><span style="cursor:pointer" onclick="event.stopPropagation();addPrdCart('${p.id}')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span></div><div class="pcard-name" onclick="openPD('${p.id}')">${p.nm}</div><div class="pcard-price" id="gprice-${p.id}">Ush ${totalPrice.toLocaleString()}</div><div class="pcard-cap">${p.s.c}${p.l?' / '+p.l.c:''}</div></div>`;
+                g.appendChild(d);
+            });
+        }
+        let gq = {};
 
-<!-- FOOTER -->
-<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
-<div class="container">
-  <div class="ftr-desktop">
-    <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
-    <div style="display:flex;gap:14px;align-items:center">
-      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-    </div>
-    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
-  </div>
-  <div class="ftr-phone">
-    <div style="display:flex;gap:16px;align-items:center">
-      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-    </div>
-    <div style="display:flex;align-items:center;gap:16px">
-      <img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
-      <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
-    </div>
-  </div>
-</div>
-</footer>
-</div>
+        function chgGQ(id, d) { if (!gq[id]) gq[id] = 1;
+            gq[id] = Math.max(1, gq[id] + d); const e = document.getElementById('gq-' + id); if (e) e.textContent = gq[id]; const
+                p = PR.find(pr => pr.id === id); if (p) { const sz = prSize === 'large' && p.l ? p.l : p.s; const pe =
+                    document.getElementById('gprice-' + id); if (pe) pe.textContent = 'Ush ' + (sz.p * gq[id])
+                    .toLocaleString() } }
 
-<!-- ====================== PAGE: SKINTYPE DETAIL ====================== -->
-<div class="page" id="pg-std">
-<!-- NAV: Logo + Hamburger -->
-<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee);padding:10px 0">
-<div class="container" style="display:flex;align-items:center;justify-content:space-between">
-  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
-  <span onclick="openM()" style="cursor:pointer;font-size:22px">☰</span>
-</div>
-</div>
+        // SKINTYPES PAGE
+        function renderSTGrid() {
+            const g = document.getElementById('st-grid');
+            g.innerHTML = '';
+            PK.forEach(pk => {
+                const d = document.createElement('div');
+                d.className = 'pcard';
+                d.onclick = () => openSTD(pk.id);
+                d.innerHTML =
+                    `<div style="position:relative"><img class="pcard-img" src="${C}${pk.bb}" alt="${pk.nm}" style="aspect-ratio:1/1;object-fit:cover"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer">View</div></div><div class="pcard-body"><div class="pcard-name">${pk.nm}</div><div class="pcard-price">Ush ${pk.lp.toLocaleString()} all large</div><div class="pcard-price" style="color:var(--g99)">Ush ${pk.sp.toLocaleString()} all small</div></div>`;
+                g.appendChild(d);
+            });
+        }
 
-<!-- BACK -->
-<div class="container" style="margin-top:6px">
-  <span onclick="go('skintypes')" style="cursor:pointer;display:flex;align-items:center;gap:4px;font-size:12px;font-weight:500">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back
-  </span>
-</div>
+        // SKINTYPE DETAIL
+        function openSTD(id) {
+            curPKID = id;
+            const pk = PK.find(p => p.id === id);
+            if (!pk) return;
+            document.getElementById('std-bb').src = C + pk.bb;
+            document.getElementById('std-ba').src = C + pk.ba;
+            document.getElementById('std-name').textContent = pk.nm;
+            document.getElementById('std-lp').textContent = 'Ush ' + pk.lp.toLocaleString();
+            document.getElementById('std-sp').textContent = 'Ush ' + pk.sp.toLocaleString();
+            document.getElementById('std-msg').textContent = pk.d;
+            const names = pk.it.map(c => PR.find(p => p.id === c)?.nm).filter(Boolean);
+            document.getElementById('std-pl').textContent = names.join('. ');
+            renderSTDPGrid();
+            go('std');
+        }
 
-<!-- BA SIDE BY SIDE -->
-<section class="container" style="margin-top:10px">
-  <div class="ba-wrap">
-    <div class="ba-side" onclick="openLB(document.getElementById('std-bb').src)"><img id="std-bb" src="" alt="Before"></div>
-    <div class="ba-side" onclick="openLB(document.getElementById('std-ba').src)"><img id="std-ba" src="" alt="After"></div>
-  </div>
-</section>
+        function setSTDSize(sz) {
+            stdSize = sz;
+            document.querySelectorAll('#std-ssel .ssel-i').forEach(o => o.classList.toggle('on', o.textContent.toLowerCase() ===
+                sz));
+            renderSTDPGrid();
+        }
 
-<!-- NAME -->
-<div class="container" style="text-align:center;margin-top:10px"><p style="font-weight:600;letter-spacing:.08em;font-size:13px" id="std-name"></p></div>
+        function renderSTDPGrid() {
+            const pk = PK.find(p => p.id === curPKID);
+            if (!pk) return;
+            const g = document.getElementById('std-pgrid');
+            g.innerHTML = '';
+            pk.it.forEach(c => {
+                const p = PR.find(pr => pr.id === c);
+                if (!p) return;
+                const sz = stdSize === 'large' && p.l ? p.l : p.s;
+                const d = document.createElement('div');
+                d.className = 'pcard';
+                d.innerHTML =
+                    `<div style="position:relative"><img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer" onclick="event.stopPropagation();openPD('${p.id}')">View</div></div><div class="pcard-body"><div class="pcard-name" onclick="openPD('${p.id}')">${p.nm}</div><div class="pcard-price">Ush ${sz.p.toLocaleString()}</div><div class="pcard-cap">${sz.c}</div></div>`;
+                g.appendChild(d);
+            });
+        }
 
-<!-- MARQUEE -->
-<div class="mw" style="margin-top:8px"><div class="mt-track"><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span><span>OPEN FROM: 8AM-5PM</span><span>SAME DAY DELIVERY</span><span>WHATSAPP US ON 0770892824</span></div></div>
+        function buyPkg(sz) {
+            const pk = PK.find(p => p.id === curPKID);
+            if (!pk) return;
+            const pr = sz === 'large' ? pk.lp : pk.sp;
+            const lbl = pk.nm + ' (' + sz + ')';
+            window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent('Hi Celara! I\'d like to order: ' + lbl +
+                ' — Ush ' + pr.toLocaleString()), '_blank');
+        }
 
-<!-- BUY OPTIONS -->
-<section class="container" style="margin-top:1rem">
-  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gee)">
-    <div><span style="font-weight:600;font-size:14px" id="std-lp"></span><br><span style="font-size:10px;color:var(--g55)">all large</span></div>
-    <button class="btn-bk" onclick="buyPkg('large')">Shop Now</button>
-  </div>
-  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0">
-    <div><span style="font-weight:600;font-size:14px" id="std-sp"></span><br><span style="font-size:10px;color:var(--g55)">all small</span></div>
-    <button class="btn-bk" onclick="buyPkg('small')">Shop Now</button>
-  </div>
-</section>
+        // PRODUCT DETAIL
+        function openPD(id) {
+            curPID = id;
+            prevPage = curPage;
+            const p = PR.find(pr => pr.id === id);
+            if (!p) return;
+            document.getElementById('pd-title').textContent = p.nm;
+            pdSize = prSize || 'small';
+            if (!p.l && pdSize === 'large') pdSize = 'small';
+            pdQty = 1;
+            document.getElementById('pd-qty').textContent = '1';
+            document.querySelectorAll('#pd-ssel .ssel-i').forEach(o => {
+                o.classList.toggle('on', o.textContent.toLowerCase() === pdSize);
+                if (o.textContent.toLowerCase() === 'large' && !p.l) o.style.opacity = '.3';
+                else o.style.opacity = '1';
+            });
+            updPDCsl();
+            updPDDet();
+            document.getElementById('pd-desc').textContent = p.d;
+            document.getElementById('pd-howto').textContent = p.h;
+            document.getElementById('pd-ing').textContent = p.ig;
+            renderSug();
+            go('pd');
+        }
 
-<!-- SIZE SEL -->
-<section class="container" style="text-align:center;margin-top:.8rem">
-  <div class="ssel" id="std-ssel"><div class="ssel-i on" onclick="setSTDSize('small')">Small</div><div class="ssel-i" onclick="setSTDSize('large')">Large</div></div>
-</section>
+        function updPDCsl() {
+            const p = PR.find(pr => pr.id === curPID);
+            if (!p) return;
+            const sz = pdSize === 'large' && p.l ? p.l : p.s;
+            const t = document.getElementById('pd-csl-t');
+            t.innerHTML =
+                `<div class="csl-sl"><img src="${C}${sz.i}" alt="${p.nm}" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px"></div><div class="csl-sl"><video src="${C}${p.v}" controls style="aspect-ratio:1/1;object-fit:cover;border-radius:8px;width:100%"></video></div><div class="csl-sl"><img src="${C}${p.cb}" alt="${p.nm} sizes" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px"></div>`;
+            cslInit('pd', 3);
+        }
 
-<!-- PRODUCTS LIST -->
-<section class="container" style="margin-top:.8rem"><p style="font-size:11px;color:var(--g55)" id="std-pl"></p></section>
+        function updPDDet() {
+            const p = PR.find(pr => pr.id === curPID);
+            if (!p) return;
+            const sz = pdSize === 'large' && p.l ? p.l : p.s;
+            document.getElementById('pd-price').textContent = 'Ush ' + (sz.p * pdQty).toLocaleString();
+            document.getElementById('pd-cap').textContent = sz.c;
+        }
 
-<!-- SALES MSG -->
-<section class="container" style="margin-top:.8rem;max-width:600px"><p style="font-size:13px;font-weight:400;color:var(--g55);line-height:1.7" id="std-msg"></p></section>
+        function setPDSize(sz) {
+            const p = PR.find(pr => pr.id === curPID);
+            if (!p) return;
+            if (sz === 'large' && !p.l) return;
+            pdSize = sz;
+            document.querySelectorAll('#pd-ssel .ssel-i').forEach(o => o.classList.toggle('on', o.textContent.toLowerCase() ===
+                sz));
+            updPDCsl();
+            updPDDet();
+        }
 
-<!-- PRODUCT BOXES -->
-<section class="container" style="margin-top:1.2rem"><div class="pgrid" id="std-pgrid"></div></section>
+        function chgQty(d) { pdQty = Math.max(1, pdQty + d);
+            document.getElementById('pd-qty').textContent = pdQty;
+            updPDDet() }
 
-<!-- CLOSING -->
-<section class="container" style="margin-top:2rem;text-align:center">
-  <p style="font-size:13px;font-weight:500;color:var(--g55);line-height:1.6">Trust the process by starting the process. Today.</p>
-</section>
+        function buyPD() {
+            const p = PR.find(pr => pr.id === curPID);
+            if (!p) return;
+            const sz = pdSize === 'large' && p.l ? p.l : p.s;
+            const pr = sz.p * pdQty;
+            const lbl = p.nm + ' (' + pdSize + ') x' + pdQty;
+            window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent('Hi Celara! I\'d like to order: ' + lbl +
+                ' — Ush ' + pr.toLocaleString()), '_blank');
+        }
 
-<!-- FOOTER -->
-<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
-<div class="container">
-  <div class="ftr-desktop">
-    <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
-    <div style="display:flex;gap:14px;align-items:center">
-      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      <a href="https://wa.me/256770892824" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-    </div>
-    <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
-  </div>
-  <div class="ftr-phone">
-    <div style="display:flex;gap:16px;align-items:center">
-      <a href="https://instagram.com/celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-      <a href="https://tiktok.com/@celaraskincare" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      <a href="https://wa.me/256770892824" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-    </div>
-    <div style="display:flex;align-items:center;gap:16px">
-      <img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:22px;object-fit:contain">
-      <span style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</span>
-    </div>
-  </div>
-</div>
-</footer>
-</div>
+        function addPrdCart(id) {
+            const p = PR.find(pr => pr.id === id);
+            if (!p) return;
+            const sz = prSize === 'large' && p.l ? p.l : p.s;
+            const qty = gq[id] || 1;
+            cart.push({ nm: p.nm + ' (' + prSize + ')', p: sz.p, q: qty });
+            updBadges();
+            openC();
+        }
 
-<!-- ====================== PAGE: PRODUCT DETAIL ====================== -->
-<div class="page" id="pg-pd">
-<!-- NAV: Logo + Search + Cart + Menu -->
-<div style="position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid var(--gee);padding:10px 0">
-<div class="container" style="display:flex;align-items:center;justify-content:space-between">
-  <div style="cursor:pointer" onclick="go('home')"><img src="https://models.valts.online/celara/wlogo.png" alt="Celara" style="height:28px;object-fit:contain"></div>
-  <div style="display:flex;align-items:center;gap:10px">
-    <span onclick="openS()" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-    <span onclick="openC()" style="cursor:pointer;position:relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cbadge" style="position:absolute;top:-5px;right:-7px;background:var(--bk);color:var(--w);font-size:8px;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700">0</span></span>
-    <span onclick="openM()" style="cursor:pointer;font-size:20px">☰</span>
-  </div>
-</div>
-</div>
+        function goBack() { go(prevPage || 'home') }
 
-<!-- BACK -->
-<div class="container" style="margin-top:6px">
-  <span id="pd-back" onclick="goBack()" style="cursor:pointer;display:flex;align-items:center;gap:4px;font-size:12px;font-weight:500">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back
-  </span>
-</div>
+        function renderSug() {
+            const c = document.getElementById('pd-sug');
+            c.innerHTML = '';
+            const sugs = [];
+            PK.filter(p => p.id !== curPKID).sort(() => Math.random() - .5).slice(0, 2).forEach(pk => sugs.push({ t: 'pk',
+                id: pk.id, nm: pk.nm, pr: 'Ush ' + pk.sp.toLocaleString(), im: pk.bb }));
+            PR.filter(p => p.id !== curPID).sort(() => Math.random() - .5).slice(0, 4).forEach(p => sugs.push({ t: 'pr',
+                id: p.id, nm: p.nm, pr: 'Ush ' + p.s.p.toLocaleString(), im: p.s.i }));
+            sugs.slice(0, 6).forEach(s => {
+                const d = document.createElement('div');
+                d.className = 'pcard';
+                d.style.cursor = 'pointer';
+                d.onclick = () => { if (s.t === 'pr') openPD(s.id);
+                    else openSTD(s.id) };
+                d.innerHTML =
+                    `<img class="pcard-img" src="${C}${s.im}" alt="${s.nm}" style="aspect-ratio:1/1;object-fit:cover"><div class="pcard-body"><div class="pcard-name">${s.nm}</div><div class="pcard-price">${s.pr}</div></div>`;
+                c.appendChild(d);
+            });
+        }
 
-<!-- MAIN LAYOUT -->
-<section class="container" style="margin-top:10px">
-<div class="pd-lay">
-  <!-- LEFT: Images -->
-  <div>
-    <p style="font-weight:600;font-size:18px;margin-bottom:8px;font-family:var(--fserif);letter-spacing:.04em" id="pd-title"></p>
-    <div class="csl" id="pd-csl">
-      <div class="csl-t" id="pd-csl-t"></div>
-      <button class="csl-btn prv" onclick="cslMove('pd',-1)">&#8249;</button>
-      <button class="csl-btn nxt" onclick="cslMove('pd',1)">&#8250;</button>
-    </div>
-    <div class="csl-dots" id="pd-dots"></div>
-  </div>
-  <!-- RIGHT: Details -->
-  <div>
-    <div style="margin-bottom:12px">
-      <span style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em">Size</span>
-      <div class="ssel" id="pd-ssel" style="margin-top:6px"><div class="ssel-i on" onclick="setPDSize('small')">Small</div><div class="ssel-i" onclick="setPDSize('large')">Large</div></div>
-    </div>
-    <p style="font-weight:700;font-size:22px" id="pd-price"></p>
-    <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
-      <button class="btn-bk" onclick="buyPD()">Shop Now</button>
-      <span onclick="buyPD()" style="cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
-    </div>
-    <p style="font-size:12px;color:var(--g55);margin-top:8px"><span style="font-weight:500;color:var(--bk)">Capacity:</span> <span id="pd-cap"></span></p>
-    <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
-      <span style="font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.08em">Quantity</span>
-      <div class="qctrl"><button class="qbtn" onclick="chgQty(-1)">−</button><span class="qval" id="pd-qty">1</span><button class="qbtn" onclick="chgQty(1)">+</button></div>
-    </div>
-    <!-- EXPANDABLES -->
-    <div style="margin-top:1.2rem">
-      <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Description</span><span>+</span></div><div class="exp-c" id="pd-desc"></div></div>
-      <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>How to use the product</span><span>+</span></div><div class="exp-c" id="pd-howto"></div></div>
-      <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Ingredients</span><span>+</span></div><div class="exp-c" id="pd-ing"></div></div>
-      <div class="exp"><div class="exp-h" onclick="togExp(this)"><span>Delivery info</span><span>+</span></div><div class="exp-c">We are available Monday to Sunday from 8:00 AM to 5:00 PM. Same-day delivery is possible when you order early before 3pm. Delivery is handled via our own trusted rider, and the transport fee is calculated based on your location and covered by the client. All orders and deliveries are coordinated smoothly through WhatsApp for your convenience.</div></div>
-    </div>
-  </div>
-</div>
-</section>
+        // CART
+        function updBadges() {
+            const n = cart.length;
+            document.querySelectorAll('.cbadge').forEach(b => { b.style.display = n > 0 ? 'flex' : 'none';
+                b.textContent = n });
+        }
 
-<!-- YOU MAY ALSO LIKE -->
-<section class="container" style="margin-top:2rem">
-  <p style="font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">You may also like</p>
-  <div class="sggrid" id="pd-sug"></div>
-</section>
+        function openC() { document.getElementById('cov').classList.add('show');
+            renderCart() }
 
-<!-- FOOTER -->
-<footer style="margin-top:auto;border-top:1px solid var(--gee);padding:14px 0">
-<div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem">
-  <div><img src="https://models.valts.online/celara/clogo.png" alt="Celara" style="height:24px;object-fit:contain"></div>
-  <div style="font-size:10px;letter-spacing:.12em;font-weight:500">Beauty.Care.Confidence</div>
-</div>
-</footer>
-</div>
+        function closeC() { document.getElementById('cov').classList.remove('show') }
 
-<!-- ====================== JS ====================== -->
-<script>
-const C='https://models.valts.online/celara/';
-const WA='256770892824';
+        function renderCart() {
+            const c = document.getElementById('citems');
+            if (!cart.length) { c.innerHTML =
+                    '<p style="font-size:13px;color:var(--g55);text-align:center;margin-top:2rem">Your cart is empty</p>';
+                document.getElementById('ctot').textContent = 'Ush 0'; return }
+            c.innerHTML = '';
+            let tot = 0;
+            cart.forEach((it, i) => {
+                tot += it.p * it.q;
+                const d = document.createElement('div');
+                d.className = 'cart-item';
+                d.innerHTML =
+                    `<div><p style="font-size:12px;font-weight:500">${it.nm}</p><p style="font-size:10px;color:var(--g55)">Qty: ${it.q} · Ush ${(it.p*it.q).toLocaleString()}</p></div><span style="cursor:pointer;font-size:18px" onclick="rmCart(${i})">×</span>`;
+                c.appendChild(d);
+            });
+            document.getElementById('ctot').textContent = 'Ush ' + tot.toLocaleString();
+        }
 
-const PR=[
-{id:'f',nm:'Facial Cleanser',s:{p:35000,c:'100ml',i:'fs1.png'},l:{p:60000,c:'250ml',i:'fb1.png'},v:'fv.mp4',cb:'fcb.png',
- d:'Deeply cleanses without stripping, leaving your skin fresh, balanced, and ready to absorb nourishment. Removes impurities and excess oil while preserving your skin\'s natural glow and softness.',
- h:'1. Moisten face.\n2. Lather cleanser apply a small amount and gently massage in circular motions for 30–60 seconds.\n3. Rinse clean.\n4. Follow with your Celara routine.',
- ig:'Aqua, Cocamidopropyl Betain, Honey (Mel), Turmeric (Curcuma Longa) Extract, Tea Tree Oil (Melaleuca Alternifolia), Xanthan Gum, Carboxymethyl Cellulose (CMC), Fragrance, Preservative.'},
-{id:'g',nm:'Glow Serum Oil',s:{p:25000,c:'60ml',i:'gs1.png'},l:{p:45000,c:'100ml',i:'gb1.png'},v:'gv.mp4',cb:'gcb.png',
- d:'Delivers intense hydration and a visible luminous glow, revealing smoother, more radiant skin. Penetrates deeply to brighten and plump your skin for that healthy, lit-from-within look.',
- h:'1. Dispense a few drops onto clean skin.\n2. Gently massage until absorbed. Allow to sink in fully.\n3. Use daily for radiant glow, morning and/or night.\n4. Follow with moisturizer.',
- ig:'Helianthus Annuus (Sunflower) Seed Oil, Daucus Carota Sativa (Carrot) Seed Oil, Tocopherol (Vitamin E), Vanilla Planifolia Fruit Extract, Jasminum Officinale (Jasmine) Oil, Citrus Limon (Lemon) Peel Oil.'},
-{id:'t',nm:'Balancing Toner',s:{p:25000,c:'60ml',i:'ts1.png'},l:{p:45000,c:'100ml',i:'tb1.png'},v:'tv.mp4',cb:'tcb.png',
- d:'Perfectly balances skin pH, minimizes pores, and prepares skin for maximum absorption. Soothes, refreshes, and creates the ideal foundation for glowing, even-toned skin.',
- h:'1. Cleanse face first.\n2. Apply toner with cotton or hands.\n3. Pat gently into skin. Let it absorb.\n4. Follow with serum or moisturizer.',
- ig:'Water (Aqua), Glycerin, Apple Cider Vinegar (Malus Domestica Fruit Vinegar), Hibiscus Sabdariffa Flower Extract, Phenoxyethanol (Optiphen).'},
-{id:'bu',nm:'Body Butter',s:{p:35000,c:'120g',i:'bus1.png'},l:{p:60000,c:'250g',i:'bub1.png'},v:'buv.mp4',cb:'bucb.png',
- d:'Deeply nourishes and locks in moisture for soft, smooth, supple skin all day long. Transforms dry, rough skin into silky, hydrated perfection with lasting comfort.',
- h:'1. Apply on clean, slightly damp skin.\n2. Massage into skin until absorbed.\n3. Focus on dry areas.\n4. Use daily, especially after shower, morning and night.',
- ig:'Petrolatum, Shea Butter, Ghee, Helianthus Annuus (Sunflower) Seed Oil, Stearic Acid, Daucus Carota Sativa (Carrot) Seed Oil, Aloe Barbadensis Leaf Oil, Beeswax (Cera Alba), Vanilla Planifolia Fruit Extract.'},
-{id:'ac',nm:'Acne Bar',s:{p:50000,c:'120g',i:'acs1.png'},l:null,v:'acv.mp4',cb:'accb.png',
- d:'Clears breakouts, reduces inflammation, and helps reveal clearer, calmer skin. Targets acne and blemishes while soothing and balancing your complexion.',
- h:'1. Lather / Wet bar and face.\n2. Gently rub on affected areas to create lather for 1 minute.\n3. Leave for 30–60 seconds then rinse and pat dry.\n4. Use morning and evening.',
- ig:'Sodium Palmate (Soap Base from Palm Oil), Aqua (Water), Aloe Barbadensis Leaf Juice, Honey (Mel), Elaeis Guineensis (Palm) Oil, Hibiscus Sabdariffa Flower Extract, Citrus Limon (Lemon) Peel Oil, Melaleuca Alternifolia (Tea Tree) Leaf Oil, Azadirachta Indica (Neem) Leaf Extract.'},
-{id:'cg',nm:'Cleansing & Glow Soap',s:{p:30000,c:'120g',i:'cgs1.png'},l:null,v:'cgv.mp4',cb:'cgcb.png',
- d:'Removes dirt and reveals brighter, smoother, more luminous and lasting soft skin with every use. Cleanses deeply yet leaves skin glowing, hydrated, and beautifully refreshed.',
- h:'1. Lather / Wet bar and face.\n2. Lather and shower whole body gently.\n3. Rinse thoroughly.\n4. Use daily for glowing skin.',
- ig:'Sodium Palmate (Soap Base from Palm Oil), Aqua (Water), Aloe Barbadensis Leaf Juice, Honey (Mel), Elaeis Guineensis (Palm) Oil, Hibiscus Sabdariffa Flower Extract, Citrus Limon (Lemon) Peel Oil, Melaleuca Alternifolia (Tea Tree) Leaf Oil, Azadirachta Indica (Neem) Leaf Extract.'},
-{id:'m',nm:'Moisturizer Cream',s:{p:45000,c:'100ml',i:'ms1.png'},l:{p:75000,c:'250ml',i:'mb1.png'},v:'mv.mp4',cb:'mcb.png',
- d:'Locks in deep hydration, smooths texture, and leaves skin supple and radiant. Provides all-day moisture and comfort while improving skin\'s natural glow.',
- h:'1. On clean skin, apply desired amount.\n2. Smooth evenly over face.\n3. Massage gently until absorbed. Lock in moisture.\n4. Daily use recommended.',
- ig:'Water, Aloe Leaf Juice, Glycerin, Niacinamide, Polysorbate 80, Helianthus Annuus (Sunflower) Seed Oil, Tea Leaf Oil, Neem Oil, Phenoxyethanol (Optiphen), Tocopherol (Vitamin E), Fragrance (Carrot).'},
-{id:'e',nm:'Exfoliating Scrub',s:{p:35000,c:'120g',i:'es1.png'},l:{p:60000,c:'250g',i:'eb1.png'},v:'ev.mp4',cb:'ecb.png',
- d:'Gently removes dead skin cells to reveal smoother, brighter, and more even skin. Refines texture and unclogs pores for a fresh, glowing complexion.',
- h:'1. Cleanse face first.\n2. Apply scrub and gently massage in circular motions.\n3. Rinse thoroughly.\n4. Use 4–5 times per week.',
- ig:'Aqua, Coffee Seed Powder, Sucrose, Sodium Chloride, Cocamidopropyl Betaine, Sunflower Seed Oil, Cetyl Alcohol (E-Wax), Stearic Acid, Turmeric Extract, Optiphen.'}
-];
+        function rmCart(i) { cart.splice(i, 1);
+            renderCart();
+            updBadges() }
 
-const PK=[
-{id:1,nm:'Balanced Skin Package',bb:'bb1.png',ba:'ba1.png',it:['cg','f','t','bu','g','e'],sp:185000,lp:300000,
- d:'Your skin is already in harmony but needs consistent care. This complete package maintains balance, boosts radiance, and prevents future concerns.'},
-{id:2,nm:'Hyperpigmented / Dark Spots / Uneven Tone Package',bb:'bb2.png',ba:'ba2.png',it:['cg','f','t','m','e','g','ac'],sp:245000,lp:365000,
- d:'Struggling with dark spots, patches, or uneven tone? This powerful package fades discoloration, hyperpigmentation and restores bright, even, radiant skin.'},
-{id:3,nm:'Dry Skin Package',bb:'bb3.png',ba:'ba3.png',it:['cg','f','t','bu','g','e'],sp:185000,lp:300000,
- d:'Constant dryness, tightness, and flakiness? This package deeply hydrates, repairs, and restores soft, supple, comfortable skin.'},
-{id:4,nm:'Oily Skin (Acne/Pimples) Package',bb:'bb4.png',ba:'ba4.png',it:['cg','f','t','m','e','ac'],sp:220000,lp:320000,
- d:'Oily skin with frequent breakouts and shine? End the cycle of acne and excess oil. These targeted products purify, soothe, and restore clarity to your complexion.'},
-{id:5,nm:'Dry Skin (Pimples / Acne & Rashes) Package',bb:'bb5.png',ba:'ba5.png',it:['cg','f','t','m','g','ac'],sp:210000,lp:305000,
- d:'Dry yet breaking out? This unique package hydrates deeply while calming acne and rashes for balanced, healed skin — this routine nourishes without clogging and clears blemishes gently.'},
-{id:6,nm:'Combination Skin Package',bb:'bb6.png',ba:'ba6.png',it:['cg','f','t','m','g','e','ac'],sp:245000,lp:365000,
- d:'Oily T-zone with dry cheeks? This package balances different areas, controls shine, and hydrates where needed.'},
-{id:7,nm:'Stretch Marks Package',bb:'bb7.png',ba:'ba7.png',it:['cg','f','t','bu','g','e'],sp:185000,lp:300000,
- d:'Visible stretch marks affecting your confidence? This package improves skin elasticity, fades marks, and restores smooth, even texture.'}
-];
+        function checkout() {
+            if (!cart.length) return;
+            let m = 'Hi Celara! I\'d like to order:\n',
+                tot = 0;
+            cart.forEach(it => { const s = it.p * it.q;
+                tot += s;
+                m += it.nm + ' — Ush ' + s.toLocaleString() + '\n' });
+            m += 'Total: Ush ' + tot.toLocaleString();
+            window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(m), '_blank');
+        }
 
-// STATE
-let curPage='home',prevPage='home',prSize='small',stdSize='small',pdSize='small',pdQty=1,curPID=null,curPKID=null;
-let cart=[],cslS={},hBAIdx=0,hBAInt;
+        // SEARCH
+        function openS() { document.getElementById('sov').classList.add('show');
+            document.getElementById('sinp').value = '';
+            document.getElementById('sres').innerHTML = '';
+            setTimeout(() => document.getElementById('sinp').focus(), 100) }
 
-// NAV
-function go(p){
-  prevPage=curPage;curPage=p;
-  document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
-  const el=document.getElementById('pg-'+p);if(el)el.classList.add('active');
-  window.scrollTo(0,0);updOvals();updBadges();
-  if(p==='home')startHBA();else stopHBA();
-}
+        function closeS() { document.getElementById('sov').classList.remove('show') }
 
-function updOvals(){
-  // desktop ovals
-  const map={home:['h-oval',0],products:['p-oval',1],skintypes:['st-oval',2]};
-  Object.entries(map).forEach(([pg,[oid,activeIdx]])=>{
-    const o=document.getElementById(oid);if(!o)return;
-    const items=o.querySelectorAll('.noval-i');const sel=o.querySelector('.noval-s');
-    items.forEach((it,i)=>{it.classList.toggle('on',i===activeIdx)});
-    const ai=items[activeIdx];if(ai&&sel){sel.style.left=ai.offsetLeft+'px';sel.style.width=ai.offsetWidth+'px'}
-  });
-  // mobile ovals
-  const mmap={home:['h-oval-m',0],products:['p-oval-m',1],skintypes:['st-oval-m',2]};
-  Object.entries(mmap).forEach(([pg,[oid,activeIdx]])=>{
-    const o=document.getElementById(oid);if(!o)return;
-    const items=o.querySelectorAll('.noval-i');const sel=o.querySelector('.noval-s');
-    items.forEach((it,i)=>{it.classList.toggle('on',i===activeIdx)});
-    const ai=items[activeIdx];if(ai&&sel){sel.style.left=ai.offsetLeft+'px';sel.style.width=ai.offsetWidth+'px'}
-  });
-}
+        function doSearch(q) {
+            const r = document.getElementById('sres');
+            r.innerHTML = '';
+            if (!q.trim()) return;
+            const ql = q.toLowerCase();
+            let found = [];
+            PR.forEach(p => { if (p.nm.toLowerCase().includes(ql)) found.push({ t: 'pr', id: p.id, nm: p.nm,
+                    pr: 'Ush ' + p.s.p.toLocaleString(), im: p.s.i }) });
+            PK.forEach(pk => { if (pk.nm.toLowerCase().includes(ql)) found.push({ t: 'pk', id: pk.id, nm: pk.nm,
+                    pr: 'Ush ' + pk.sp.toLocaleString(), im: pk.bb }) });
+            if (!found.length) {
+                r.innerHTML =
+                    '<p style="font-size:13px;font-weight:600;margin-bottom:6px">Oops, not found</p><p style="font-size:11px;color:var(--g55);margin-bottom:8px">You may also like</p>';
+                found = [...PR.slice(0, 3).map(p => ({ t: 'pr', id: p.id, nm: p.nm, pr: 'Ush ' + p.s.p
+                        .toLocaleString(), im: p.s.i })), ...PK.slice(0, 2).map(pk => ({ t: 'pk', id: pk.id,
+                        nm: pk.nm, pr: 'Ush ' + pk.sp.toLocaleString(), im: pk.bb }))];
+            }
+            found.forEach(s => {
+                const d = document.createElement('div');
+                d.className = 's-ritem';
+                d.onclick = () => { closeS(); if (s.t === 'pr') openPD(s.id);
+                    else openSTD(s.id) };
+                d.innerHTML =
+                    `<img src="${C}${s.im}" alt="${s.nm}"><div><p style="font-size:12px;font-weight:500">${s.nm}</p><p style="font-size:10px;color:var(--g55)">${s.pr}</p></div>`;
+                r.appendChild(d);
+            });
+        }
 
-// CAROUSEL
-function cslInit(id,n){cslS[id]={c:0,t:n,auto:null};cslDots(id)}
-function cslMove(id,d){const s=cslS[id];if(!s)return;s.c=(s.c+d+s.t)%s.t;const t=document.getElementById(id+'-csl-t')||document.getElementById(id+'-t');if(t)t.style.transform='translateX(-'+s.c*100+'%)';cslDots(id)}
-function cslGo(id,i){const s=cslS[id];if(!s)return;s.c=i;const t=document.getElementById(id+'-csl-t')||document.getElementById(id+'-t');if(t)t.style.transform='translateX(-'+s.c*100+'%)';cslDots(id)}
-function cslDots(id){const d=document.getElementById(id+'-dots');if(!d)return;const s=cslS[id];d.innerHTML='';for(let i=0;i<s.t;i++){const dot=document.createElement('span');dot.className='csl-dot'+(i===s.c?' on':'');dot.onclick=()=>cslGo(id,i);d.appendChild(dot)}}
-function cslAuto(id,ms){const s=cslS[id];if(!s)return;if(s.auto)clearInterval(s.auto);s.auto=setInterval(()=>cslMove(id,1),ms||5000)}
-function cslStopAuto(id){const s=cslS[id];if(s&&s.auto){clearInterval(s.auto);s.auto=null}}
+        // MENU
+        function openM() { document.getElementById('mov').classList.add('show') }
 
-// PRODUCTS PAGE
-function setPrdSize(sz){
-  prSize=sz;
-  document.querySelectorAll('#p-ssel .ssel-i').forEach(o=>o.classList.toggle('on',o.textContent.toLowerCase()===sz));
-  renderPGrid();
-}
-function renderPGrid(){
-  const g=document.getElementById('p-grid');g.innerHTML='';
-  PR.forEach(p=>{
-    const sz=prSize==='large'&&p.l?p.l:p.s;
-    const q=gq[p.id]||1;
-    const totalPrice=sz.p*q;
-    const d=document.createElement('div');d.className='pcard';
-    d.innerHTML=`<div style="position:relative"><img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer" onclick="event.stopPropagation();openPD('${p.id}')">View</div></div><div class="pcard-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px"><div class="qctrl"><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',-1)">−</button><span class="qval" id="gq-${p.id}">${q}</span><button class="qbtn" onclick="event.stopPropagation();chgGQ('${p.id}',1)">+</button></div><span style="cursor:pointer" onclick="event.stopPropagation();addPrdCart('${p.id}')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span></div><div class="pcard-name" onclick="openPD('${p.id}')">${p.nm}</div><div class="pcard-price" id="gprice-${p.id}">Ush ${totalPrice.toLocaleString()}</div><div class="pcard-cap">${p.s.c}${p.l?' / '+p.l.c:''}</div></div>`;
-    g.appendChild(d);
-  });
-}
-let gq={};
-function chgGQ(id,d){if(!gq[id])gq[id]=1;gq[id]=Math.max(1,gq[id]+d);const e=document.getElementById('gq-'+id);if(e)e.textContent=gq[id];const p=PR.find(pr=>pr.id===id);if(p){const sz=prSize==='large'&&p.l?p.l:p.s;const pe=document.getElementById('gprice-'+id);if(pe)pe.textContent='Ush '+(sz.p*gq[id]).toLocaleString()}}
+        function closeM() { document.getElementById('mov').classList.remove('show') }
 
-// SKINTYPES PAGE
-function renderSTGrid(){
-  const g=document.getElementById('st-grid');g.innerHTML='';
-  PK.forEach(pk=>{
-    const d=document.createElement('div');d.className='pcard';d.onclick=()=>openSTD(pk.id);
-    d.innerHTML=`<div style="position:relative"><img class="pcard-img" src="${C}${pk.bb}" alt="${pk.nm}" style="aspect-ratio:1/1;object-fit:cover"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer">View</div></div><div class="pcard-body"><div class="pcard-name">${pk.nm}</div><div class="pcard-price">Ush ${pk.lp.toLocaleString()} all large</div><div class="pcard-price" style="color:var(--g99)">Ush ${pk.sp.toLocaleString()} all small</div></div>`;
-    g.appendChild(d);
-  });
-}
+        // LIGHTBOX
+        function openLB(src) { document.getElementById('lb-img').src = src;
+            document.getElementById('lb').classList.add('show') }
 
-// SKINTYPE DETAIL
-function openSTD(id){
-  curPKID=id;const pk=PK.find(p=>p.id===id);if(!pk)return;
-  document.getElementById('std-bb').src=C+pk.bb;
-  document.getElementById('std-ba').src=C+pk.ba;
-  document.getElementById('std-name').textContent=pk.nm;
-  document.getElementById('std-lp').textContent='Ush '+pk.lp.toLocaleString();
-  document.getElementById('std-sp').textContent='Ush '+pk.sp.toLocaleString();
-  document.getElementById('std-msg').textContent=pk.d;
-  const names=pk.it.map(c=>PR.find(p=>p.id===c)?.nm).filter(Boolean);
-  document.getElementById('std-pl').textContent=names.join('. ');
-  renderSTDPGrid();go('std');
-}
-function setSTDSize(sz){
-  stdSize=sz;
-  document.querySelectorAll('#std-ssel .ssel-i').forEach(o=>o.classList.toggle('on',o.textContent.toLowerCase()===sz));
-  renderSTDPGrid();
-}
-function renderSTDPGrid(){
-  const pk=PK.find(p=>p.id===curPKID);if(!pk)return;
-  const g=document.getElementById('std-pgrid');g.innerHTML='';
-  pk.it.forEach(c=>{
-    const p=PR.find(pr=>pr.id===c);if(!p)return;
-    const sz=stdSize==='large'&&p.l?p.l:p.s;
-    const d=document.createElement('div');d.className='pcard';
-    d.innerHTML=`<div style="position:relative"><img class="pcard-img" src="${C}${sz.i}" alt="${p.nm}" onclick="openPD('${p.id}')"><div style="position:absolute;bottom:8px;right:8px;background:var(--bk);color:var(--w);padding:4px 12px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer" onclick="event.stopPropagation();openPD('${p.id}')">View</div></div><div class="pcard-body"><div class="pcard-name" onclick="openPD('${p.id}')">${p.nm}</div><div class="pcard-price">Ush ${sz.p.toLocaleString()}</div><div class="pcard-cap">${sz.c}</div></div>`;
-    g.appendChild(d);
-  });
-}
-function buyPkg(sz){
-  const pk=PK.find(p=>p.id===curPKID);if(!pk)return;
-  const pr=sz==='large'?pk.lp:pk.sp;
-  const lbl=pk.nm+' ('+sz+')';
-  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent('Hi Celara! I\'d like to order: '+lbl+' — Ush '+pr.toLocaleString()),'_blank');
-}
+        function closeLB() { document.getElementById('lb').classList.remove('show') }
 
-// PRODUCT DETAIL
-function openPD(id){
-  curPID=id;prevPage=curPage;const p=PR.find(pr=>pr.id===id);if(!p)return;
-  document.getElementById('pd-title').textContent=p.nm;
-  pdSize=prSize||'small';if(!p.l&&pdSize==='large')pdSize='small';
-  pdQty=1;document.getElementById('pd-qty').textContent='1';
-  document.querySelectorAll('#pd-ssel .ssel-i').forEach(o=>{
-    o.classList.toggle('on',o.textContent.toLowerCase()===pdSize);
-    if(o.textContent.toLowerCase()==='large'&&!p.l)o.style.opacity='.3';else o.style.opacity='1';
-  });
-  updPDCsl();updPDDet();
-  document.getElementById('pd-desc').textContent=p.d;
-  document.getElementById('pd-howto').textContent=p.h;
-  document.getElementById('pd-ing').textContent=p.ig;
-  renderSug();go('pd');
-}
-function updPDCsl(){
-  const p=PR.find(pr=>pr.id===curPID);if(!p)return;
-  const sz=pdSize==='large'&&p.l?p.l:p.s;
-  const t=document.getElementById('pd-csl-t');
-  t.innerHTML=`<div class="csl-sl"><img src="${C}${sz.i}" alt="${p.nm}" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px"></div><div class="csl-sl"><video src="${C}${p.v}" controls style="aspect-ratio:1/1;object-fit:cover;border-radius:8px;width:100%"></video></div><div class="csl-sl"><img src="${C}${p.cb}" alt="${p.nm} sizes" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px"></div>`;
-  cslInit('pd',3);
-}
-function updPDDet(){
-  const p=PR.find(pr=>pr.id===curPID);if(!p)return;
-  const sz=pdSize==='large'&&p.l?p.l:p.s;
-  document.getElementById('pd-price').textContent='Ush '+(sz.p*pdQty).toLocaleString();
-  document.getElementById('pd-cap').textContent=sz.c;
-}
-function setPDSize(sz){
-  const p=PR.find(pr=>pr.id===curPID);if(!p)return;if(sz==='large'&&!p.l)return;
-  pdSize=sz;
-  document.querySelectorAll('#pd-ssel .ssel-i').forEach(o=>o.classList.toggle('on',o.textContent.toLowerCase()===sz));
-  updPDCsl();updPDDet();
-}
-function chgQty(d){pdQty=Math.max(1,pdQty+d);document.getElementById('pd-qty').textContent=pdQty;updPDDet()}
-function buyPD(){
-  const p=PR.find(pr=>pr.id===curPID);if(!p)return;
-  const sz=pdSize==='large'&&p.l?p.l:p.s;
-  const pr=sz.p*pdQty;
-  const lbl=p.nm+' ('+pdSize+') x'+pdQty;
-  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent('Hi Celara! I\'d like to order: '+lbl+' — Ush '+pr.toLocaleString()),'_blank');
-}
-function addPrdCart(id){
-  const p=PR.find(pr=>pr.id===id);if(!p)return;
-  const sz=prSize==='large'&&p.l?p.l:p.s;
-  const qty=gq[id]||1;
-  cart.push({nm:p.nm+' ('+prSize+')',p:sz.p,q:qty});
-  updBadges();openC();
-}
-function goBack(){go(prevPage||'home')}
+        // EXPANDABLE
+        function togExp(h) { const c = h.nextElementSibling; const ic = h.querySelector('span:last-child');
+            c.classList.toggle('open');
+            ic.textContent = c.classList.contains('open') ? '−' : '+' }
 
-function renderSug(){
-  const c=document.getElementById('pd-sug');c.innerHTML='';
-  const sugs=[];
-  PK.filter(p=>p.id!==curPKID).sort(()=>Math.random()-.5).slice(0,2).forEach(pk=>sugs.push({t:'pk',id:pk.id,nm:pk.nm,pr:'Ush '+pk.sp.toLocaleString(),im:pk.bb}));
-  PR.filter(p=>p.id!==curPID).sort(()=>Math.random()-.5).slice(0,4).forEach(p=>sugs.push({t:'pr',id:p.id,nm:p.nm,pr:'Ush '+p.s.p.toLocaleString(),im:p.s.i}));
-  sugs.slice(0,6).forEach(s=>{
-    const d=document.createElement('div');d.className='pcard';d.style.cursor='pointer';
-    d.onclick=()=>{if(s.t==='pr')openPD(s.id);else openSTD(s.id)};
-    d.innerHTML=`<img class="pcard-img" src="${C}${s.im}" alt="${s.nm}" style="aspect-ratio:1/1;object-fit:cover"><div class="pcard-body"><div class="pcard-name">${s.nm}</div><div class="pcard-price">${s.pr}</div></div>`;
-    c.appendChild(d);
-  });
-}
+        // HOME BA
+        function startHBA() {
+            stopHBA();
+            hBAIdx = 0;
+            hBAInt = setInterval(() => {
+                hBAIdx = (hBAIdx + 1) % 7;
+                var bbEl = document.getElementById('h-bb');
+                var baEl = document.getElementById('h-ba');
+                if (bbEl) bbEl.src = C + 'bb' + (hBAIdx + 1) + '.png';
+                if (baEl) baEl.src = C + 'ba' + (hBAIdx + 1) + '.png'
+            }, 4000)
+        }
 
-// CART
-function updBadges(){
-  const n=cart.length;
-  document.querySelectorAll('.cbadge').forEach(b=>{b.style.display=n>0?'flex':'none';b.textContent=n});
-}
-function openC(){document.getElementById('cov').classList.add('show');renderCart()}
-function closeC(){document.getElementById('cov').classList.remove('show')}
-function renderCart(){
-  const c=document.getElementById('citems');
-  if(!cart.length){c.innerHTML='<p style="font-size:13px;color:var(--g55);text-align:center;margin-top:2rem">Your cart is empty</p>';document.getElementById('ctot').textContent='Ush 0';return}
-  c.innerHTML='';let tot=0;
-  cart.forEach((it,i)=>{
-    tot+=it.p*it.q;
-    const d=document.createElement('div');d.className='cart-item';
-    d.innerHTML=`<div><p style="font-size:12px;font-weight:500">${it.nm}</p><p style="font-size:10px;color:var(--g55)">Qty: ${it.q} · Ush ${(it.p*it.q).toLocaleString()}</p></div><span style="cursor:pointer;font-size:18px" onclick="rmCart(${i})">×</span>`;
-    c.appendChild(d);
-  });
-  document.getElementById('ctot').textContent='Ush '+tot.toLocaleString();
-}
-function rmCart(i){cart.splice(i,1);renderCart();updBadges()}
-function checkout(){
-  if(!cart.length)return;
-  let m='Hi Celara! I\'d like to order:\n',tot=0;
-  cart.forEach(it=>{const s=it.p*it.q;tot+=s;m+=it.nm+' — Ush '+s.toLocaleString()+'\n'});
-  m+='Total: Ush '+tot.toLocaleString();
-  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(m),'_blank');
-}
+        function stopHBA() { if (hBAInt) { clearInterval(hBAInt);
+                hBAInt = null } }
 
-// SEARCH
-function openS(){document.getElementById('sov').classList.add('show');document.getElementById('sinp').value='';document.getElementById('sres').innerHTML='';setTimeout(()=>document.getElementById('sinp').focus(),100)}
-function closeS(){document.getElementById('sov').classList.remove('show')}
-function doSearch(q){
-  const r=document.getElementById('sres');r.innerHTML='';if(!q.trim())return;
-  const ql=q.toLowerCase();let found=[];
-  PR.forEach(p=>{if(p.nm.toLowerCase().includes(ql))found.push({t:'pr',id:p.id,nm:p.nm,pr:'Ush '+p.s.p.toLocaleString(),im:p.s.i})});
-  PK.forEach(pk=>{if(pk.nm.toLowerCase().includes(ql))found.push({t:'pk',id:pk.id,nm:pk.nm,pr:'Ush '+pk.sp.toLocaleString(),im:pk.bb})});
-  if(!found.length){
-    r.innerHTML='<p style="font-size:13px;font-weight:600;margin-bottom:6px">Oops, not found</p><p style="font-size:11px;color:var(--g55);margin-bottom:8px">You may also like</p>';
-    found=[...PR.slice(0,3).map(p=>({t:'pr',id:p.id,nm:p.nm,pr:'Ush '+p.s.p.toLocaleString(),im:p.s.i})),...PK.slice(0,2).map(pk=>({t:'pk',id:pk.id,nm:pk.nm,pr:'Ush '+pk.sp.toLocaleString(),im:pk.bb}))];
-  }
-  found.forEach(s=>{
-    const d=document.createElement('div');d.className='s-ritem';
-    d.onclick=()=>{closeS();if(s.t==='pr')openPD(s.id);else openSTD(s.id)};
-    d.innerHTML=`<img src="${C}${s.im}" alt="${s.nm}"><div><p style="font-size:12px;font-weight:500">${s.nm}</p><p style="font-size:10px;color:var(--g55)">${s.pr}</p></div>`;
-    r.appendChild(d);
-  });
-}
-
-// MENU
-function openM(){document.getElementById('mov').classList.add('show')}
-function closeM(){document.getElementById('mov').classList.remove('show')}
-
-// LIGHTBOX
-function openLB(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('show')}
-function closeLB(){document.getElementById('lb').classList.remove('show')}
-
-// EXPANDABLE
-function togExp(h){const c=h.nextElementSibling;const ic=h.querySelector('span:last-child');c.classList.toggle('open');ic.textContent=c.classList.contains('open')?'−':'+'}
-
-// HOME BA
-function startHBA(){stopHBA();hBAIdx=0;hBAInt=setInterval(()=>{hBAIdx=(hBAIdx+1)%7;var bbEl=document.getElementById('h-bb');var baEl=document.getElementById('h-ba');if(bbEl)bbEl.src=C+'bb'+(hBAIdx+1)+'.png';if(baEl)baEl.src=C+'ba'+(hBAIdx+1)+'.png'},4000)}
-function stopHBA(){if(hBAInt){clearInterval(hBAInt);hBAInt=null}}
-
-// INIT
-function init(){
-  renderPGrid();renderSTGrid();cslInit('ph',4);cslAuto('ph',5000);updOvals();startHBA();
-}
-document.addEventListener('DOMContentLoaded',init);
-</script>
+        // INIT
+        function init() {
+            renderPGrid();
+            renderSTGrid();
+            cslInit('ph', 4);
+            cslAuto('ph', 5000);
+            updOvals();
+            startHBA();
+        }
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
